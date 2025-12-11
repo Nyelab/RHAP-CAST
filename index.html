@@ -46,22 +46,23 @@
             text-align: left;
         }
 
-        /* Map Container and Image */
+        /* Map Container */
         .map-container {
             margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 900px;
+            height: 600px;
             border: 2px solid #ccc;
-            padding: 10px;
-            display: inline-block; /* Centers the container */
+            border-radius: 5px;
         }
 
-        .map-link img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            cursor: zoom-in; /* Indicates the image is clickable */
-        }
-
-        /* Download Button */
+        /* Open Map Button */
         .download-button {
             display: inline-block;
             padding: 15px 30px;
@@ -73,7 +74,7 @@
             font-size: 1.2em;
             font-weight: bold;
             transition: background-color 0.3s;
-            margin-bottom: 20px;
+            margin-top: 20px;
         }
 
         .download-button:hover {
@@ -98,19 +99,23 @@
 
     <main class="content-section">
         <p class="intro-text">
-            The River Herring Avoidance Program foreCAST (RHAPCAST) forecasts regions to maximize encounter of target species (Atlantic herring or Atlantic mackerel) while minimizing river herring bycatch. Forecasts are provided one week in advance to help you plan.  Look for a new forecast each Monday!
+            The River Herring Avoidance Program Forecast (RHAPCAST) forecasts regions to maximize encounters of target species (Atlantic herring or Atlantic mackerel) while minimizing river herring bycatch. Forecasts are provided one week in advance to help you plan. Look for a new forecast each Monday!
         </p>
 
-        <h2>December  13 – 19 Forecast to maximize Atlantic herring while minimizing river herring</h2>
+        <h2>December 13 – 19 Forecast to maximize Atlantic herring while minimizing river herring</h2>
 
         <div class="map-container">
-            <a href="AMmy_interactive_map.html" target="_blank" class="map-link" title="Click to view full-size map">
-                <img src="AMmy_interactive_map.html" alt="Forecast Map Image Placeholder" id="forecast-map">
-            </a>
-            <p style="font-size: 0.9em; margin-top: 10px;">(Click the image above to view the map at full size)</p>
-        </div>
+            <!-- Interactive Map -->
+            <iframe src="AMmy_interactive_map.html" title="Forecast Map"></iframe>
+            <p style="font-size: 0.9em; margin-top: 10px;">
+                (Interactive map — zoom & explore!)
+            </p>
 
-        <a href="AMmy_interactive_map.html" download class="download-button">Download Map</a>
+            <!-- Open Full Map Button -->
+            <a href="AMmy_interactive_map.html" target="_blank" class="download-button">
+                Open Full Map
+            </a>
+        </div>
 
     </main>
 
