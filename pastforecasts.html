@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RHAPCAST - River Herring Avoidance Program Forecast</title>
+    <style>
+        /* Basic Reset and Typography */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* Header Styling */
+        .header-section {
+            background-color: #0b2d49; /* Dark Blue */
+            color: #ffffff;
+            padding: 40px 20px;
+        }
+
+        .header-section h1 {
+            margin: 0;
+            font-size: 3em;
+            letter-spacing: 2px;
+        }
+
+        .header-section p {
+            font-size: 1.2em;
+            margin-top: 5px;
+        }
+
+        /* Main Content */
+        .content-section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .intro-text {
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        /* Map Container */
+        .map-container {
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 900px;
+            height: 600px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Open Map Button */
+        .download-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #9CAF88; /* sage */
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .download-button:hover {
+            background-color: #8DA878; /* slightly darker sage */
+        }
+
+        /* Footer */
+        .footer-section {
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+
+        /* Tab buttons */
+        .tab-btn {
+            background: #9CAF88; /* sage */
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        .tab-btn:hover {
+            background: #8DA878; /* slightly darker sage */
+        }
+
+        /* Collapsible menu */
+        .collapsible {
+            background-color: #9CAF88;
+            color: white;
+            cursor: pointer;
+            padding: 10px 15px;
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            text-align: left;
+            font-weight: bold;
+            outline: none;
+            margin-bottom: 10px;
+        }
+
+        .collapsible:hover {
+            background-color: #8DA878;
+        }
+
+        .content-collapsible {
+            display: none;
+            overflow: hidden;
+            padding-left: 15px;
+            margin-bottom: 20px;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .content-collapsible a {
+            display: block;
+            padding: 6px 0;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .content-collapsible a:hover {
+            background-color: #eee;
+            border-radius: 4px;
+            padding-left: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<nav style="background:#eee; padding:10px; display:flex; gap:15px; flex-wrap:wrap;">
+  <a href="index.html" class="tab-btn">Current forecasts</a>
+  <a href="pastforecasts.html" class="tab-btn">Past forecasts</a>
+</nav>
+
+<header class="header-section">
+    <h1>RHAPCAST.ORG</h1>
+    <p>RIVER HERRING AVOIDANCE PROGRAM FORECAST</p>
+</header>
+
+<h1>RHAP CAST Past forecasts!</h1>
+
+<div class="content-section">
+    <h2>December 2025 Forecasts</h2>
+
+    <button class="collapsible">Dec 13 – Dec 19 Forecasts ▼</button>
+    <div class="content-collapsible">
+        <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/AHRH_1213_1219_map.html" class="tab-btn">Atlantic herring & River herring joint probability</a>
+        <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/AMRH_1213_1219_map.html" class="tab-btn">Atlantic mackerel & River herring joint probability</a>
+        <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/RH_1213_1219_map.html" class="tab-btn">River herring individual map</a>
+        <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/AH_1213_1219_map.html" class="tab-btn">Atlantic herring individual map</a>
+        <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/AM_1213_1219.html" class="tab-btn">Atlantic mackerel individual map</a>
+        <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/forecast_1213_1219.pdf" class="tab-btn" target="_blank">Forecast PDF (All Maps)</a>
+    </div>
+</div>
+
+<footer class="footer-section">
+    Brought to you by <a href="https://nye.unc.edu/" target="_blank">Nye Lab at UNC</a>
+</footer>
+
+<script>
+    // Collapsible menu functionality
+    const coll = document.querySelector(".collapsible");
+    const content = document.querySelector(".content-collapsible");
+
+    coll.addEventListener("click", function() {
+        content.style.display = (content.style.display === "flex") ? "none" : "flex";
+    });
+</script>
+
+</body>
+</html>

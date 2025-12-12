@@ -88,9 +88,26 @@
             border-top: 1px solid #eee;
             font-size: 0.9em;
         }
+	/* Tab buttons */
+  	.tab-btn {
+   	   background: #9CAF88; /* sage */
+   	   color: white;
+   	   padding: 8px 15px;
+    	   text-decoration: none;
+    	   border-radius: 8px;
+   	   font-weight: bold;
+  }
+  	.tab-btn:hover {
+    	   background: #8DA878; /* slightly darker sage */
+  }
     </style>
 </head>
 <body>
+
+<nav style="background:#eee; padding:10px; display:flex; gap:15px;">
+  <a href="index.html" class="tab-btn">Current forecasts</a>
+  <a href="pastforecasts.html" class="tab-btn">Past forecasts</a>
+</nav>
 
     <header class="header-section">
         <h1>RHAPCAST.ORG</h1>
