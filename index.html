@@ -46,22 +46,23 @@
             text-align: left;
         }
 
-        /* Map Container and Image */
+        /* Map Container */
         .map-container {
             margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 900px;
+            height: 600px;
             border: 2px solid #ccc;
-            padding: 10px;
-            display: inline-block; /* Centers the container */
+            border-radius: 5px;
         }
 
-        .map-link img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            cursor: zoom-in; /* Indicates the image is clickable */
-        }
-
-        /* Download Button */
+        /* Open Map Button */
         .download-button {
             display: inline-block;
             padding: 15px 30px;
@@ -73,7 +74,7 @@
             font-size: 1.2em;
             font-weight: bold;
             transition: background-color 0.3s;
-            margin-bottom: 20px;
+            margin-top: 20px;
         }
 
         .download-button:hover {
@@ -98,21 +99,124 @@
 
     <main class="content-section">
         <p class="intro-text">
-            The River Herring Avoidance Program foreCAST (RHAPCAST) forecasts regions to maximize encounter of target species (Atlantic herring or Atlantic mackerel) while minimizing river herring bycatch. Forecasts are provided one week in advance to help you plan.  Look for a new forecast each Monday!
+         The River Herring Avoidance Program Forecast (RHAPCAST) forecasts regions to maximize encounters of target species (Atlantic herring or Atlantic mackerel) while minimizing river herring bycatch. Forecasts are provided about one week in advance to help you plan. Look for a new forecast each Monday!
+	
+	Generally, the warmer colors on the maps (red/brown) represent areas that are predicted to have a low encounter probability of the species, and the cooler colors (blue) represent areas that are predicted to have high encounters of the species. 	
+
+
         </p>
 
-        <h2>December  13 – 19 Forecast to maximize Atlantic herring while minimizing river herring</h2>
+        <h2>December 13 – 19 Forecast to maximize Atlantic herring encounters while minimizing river herring encounters</h2>
+
+	<main class="content-section">
+        <p class="intro-text">
+		This map shows areas that predict a high encountering probability of Atlantic herring (blue) and areas that either also have a high encountering probability of river herring or low encountering probability of Atlantic herring (red/brown). The joint probability likelihood was estimated for each grid cell by multiplying the encounter probability of Atlantic herring by one subtracted by the encounter probability of river herring. The bright red area is a restricted fishing area for midwater trawls, and the solid black lines represent the river herring and shad bycatch cap management areas.	
+
+
+        </p>
+
 
         <div class="map-container">
-            <a href="AMmy_interactive_map.html, selfcontained = FALSE" target="_blank" class="map-link" title="Click to view full-size map">
-                <img src="AMmy_interactive_map.html, selfcontained = FALSE" alt="Forecast Map Image Placeholder" id="forecast-map">
+            <!-- Interactive Map -->
+            <iframe src="AHRH_1213_1219_map.html" title="Forecast Map"></iframe>
+            <p style="font-size: 0.9em; margin-top: 10px;">
+                (Interactive map — zoom & explore!)
+            </p>
+
+            <!-- Open Full Map Button -->
+            <a href="AHRH_1213_1219_map.html" target="_blank" class="download-button">
+                Open Full Map
             </a>
-            <p style="font-size: 0.9em; margin-top: 10px;">(Click the image above to view the map at full size)</p>
         </div>
 
-        <a href="AMmy_interactive_map.html, selfcontained = FALSE" download class="download-button">Download Map</a>
+ 	<h2>December 13 – 19 Forecast to maximize Atlantic mackerel encounters while minimizing river herring encounters</h2>
+
+	<main class="content-section">
+        <p class="intro-text">
+		This map shows areas that predict a high encountering probability of Atlantic mackerel (blue) and areas that either also have a high encountering probability of river herring or low encountering probability of Atlantic mackerel (red/brown). The joint probability likelihood was estimated for each grid cell by multiplying the encounter probability of Atlantic mackerel by one subtracted by the encounter probability of river herring. The bright red area is a restricted fishing area for midwater trawls, and the solid black lines represent the river herring and shad bycatch cap management areas.	
+
+
+        </p>
+
+        <div class="map-container">
+            <!-- Interactive Map -->
+            <iframe src="AMRH_1213_1219_map.html" title="Forecast Map"></iframe>
+            <p style="font-size: 0.9em; margin-top: 10px;">
+                (Interactive map — zoom & explore!)
+            </p>
+
+            <!-- Open Full Map Button -->
+            <a href="AMRH_1213_1219_map.html" target="_blank" class="download-button">
+                Open Full Map
+            </a>
+        </div>
+
+ 	<h2>December 13 – 19 Forecast to identify river herring encounters</h2>
+
+	<main class="content-section">
+        <p class="intro-text">
+		This map shows areas that predict a high encountering probability of river herring (blue) and areas that predict a low encountering probability of river herring (red/brown). The bright red area is a restricted fishing area for Atlantic herring and mackerel midwater trawls, and the solid black lines represnt the river herring and shad bycatch cap management areas.
+        </p>
+
+        <div class="map-container">
+            <!-- Interactive Map -->
+            <iframe src="RH_1213_1219_map.html" title="Forecast Map"></iframe>
+            <p style="font-size: 0.9em; margin-top: 10px;">
+                (Interactive map — zoom & explore!)
+            </p>
+
+            <!-- Open Full Map Button -->
+            <a href="RH_1213_1219_map.html" target="_blank" class="download-button">
+                Open Full Map
+            </a>
+        </div>
+
+ 	<h2>December 13 – 19 Forecast to identify Atlantic herring encounters</h2>
+
+	<main class="content-section">
+        <p class="intro-text">
+		This map shows areas that predict a high encountering probability of Atlantic herring (blue) and areas that predict a low encountering probability of Atlantic herring (red/brown). The bright red area is a restricted fishing area for Atlantic herring and mackerel midwater trawls, and the solid black lines represnt the river herring and shad bycatch cap management areas.
+        </p>
+
+
+        <div class="map-container">
+            <!-- Interactive Map -->
+            <iframe src="AH_1213_1219_map.html" title="Forecast Map"></iframe>
+            <p style="font-size: 0.9em; margin-top: 10px;">
+                (Interactive map — zoom & explore!)
+            </p>
+
+            <!-- Open Full Map Button -->
+            <a href="AH_1213_1219_map.html" target="_blank" class="download-button">
+                Open Full Map
+            </a>
+        </div>
+
+ 	<h2>December 13 – 19 Forecast to identify Atlantic mackerel encounters</h2>
+
+	<main class="content-section">
+        <p class="intro-text">
+		This map shows areas that predict a high encountering probability of Atlantic mackerel (blue) and areas that predict a low encountering probability of Atlantic mackerel (red/brown). The bright red area is a restricted fishing area for Atlantic herring and mackerel midwater trawls, and the solid black lines represnt the river herring and shad bycatch cap management areas.
+        </p>
+
+        <div class="map-container">
+            <!-- Interactive Map -->
+            <iframe src="AM_1213_1219_map.html" title="Forecast Map"></iframe>
+            <p style="font-size: 0.9em; margin-top: 10px;">
+                (Interactive map — zoom & explore!)
+            </p>
+
+            <!-- Open Full Map Button -->
+            <a href="AM_1213_1219_map.html" target="_blank" class="download-button">
+                Open Full Map
+            </a>
+        </div>
 
     </main>
+
+	<a href="forecast_1213_1219.pdf" target="_blank"> Download forecast maps: 12/13 - 12/19</a>
+
+	<a href="RHAPCAST_model_background.pdf" target="_blank"> Download background information of RHAP CAST models</a>
 
     <footer class="footer-section">
         Brought to you by <a href="https://nye.unc.edu/" target="_blank">Nye Lab at UNC</a>
