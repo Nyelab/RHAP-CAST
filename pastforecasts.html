@@ -66,7 +66,7 @@
         .download-button {
             display: inline-block;
             padding: 15px 30px;
-            background-color: #4CAF50; /* Green */
+            background-color: #9CAF88; /* sage */
             color: white;
             text-decoration: none;
             border: none;
@@ -78,7 +78,7 @@
         }
 
         .download-button:hover {
-            background-color: #45a049;
+            background-color: #8DA878; /* slightly darker sage */
         }
 
         /* Footer */
@@ -104,23 +104,45 @@
 </head>
 <body>
 
-  <!-- Include your nav bar here -->
-<nav style="background:#eee; padding:10px; display:flex; gap:15px;">
+<nav style="background:#eee; padding:10px; display:flex; gap:15px; flex-wrap:wrap;">
   <a href="index.html" class="tab-btn">Current forecasts</a>
   <a href="pastforecasts.html" class="tab-btn">Past forecasts</a>
 </nav>
-    <header class="header-section">
-        <h1>RHAPCAST.ORG</h1>
-        <p>RIVER HERRING AVOIDANCE PROGRAM FORECAST</p>
-    </header>
 
-  <h1>RHAP CAST Past forecasts!</h1>
-  <p>Your content goes here.</p>
+<header class="header-section">
+    <h1>RHAPCAST.ORG</h1>
+    <p>RIVER HERRING AVOIDANCE PROGRAM FORECAST</p>
+</header>
 
- <footer class="footer-section">
-        Brought to you by <a href="https://nye.unc.edu/" target="_blank">Nye Lab at UNC</a>
- </footer>
+<h1>RHAP CAST Past forecasts!</h1>
 
+<div class="content-section">
+    <h2>December 2025 Forecasts (Dec 13–19)</h2>
+    <p>Select a map below:</p>
 
-</body>
-</html>
+    <div style="display:flex; flex-direction:column; gap:15px; max-width:600px; margin:0 auto;">
+
+        <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/AHRH_1213_1219_map.html"
+           class="tab-btn">Atlantic herring & River herring joint probability</a>
+
+        <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/AMRH_1213_1219_map.html"
+           class="tab-btn">Atlantic mackerel & River herring joint probability</a>
+
+        <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/RH_1213_1219_map.html"
+           class="tab-btn">River herring individual map</a>
+
+        <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/AH_1213_1219_map.html"
+           class="tab-btn">Atlantic herring individual map</a>
+
+        <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/AM_1213_1219.html"
+           class="tab-btn">Atlantic mackerel individual map</a>
+
+        <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/forecast_1213_1219.pdf"
+           class="tab-btn" target="_blank">Forecast PDF for Dec 13 - Dec 19 (All Maps)</a>
+
+    </div>
+</div>
+
+<footer class="footer-section">
+    Brought to you by <a href="https://nye.unc.edu/" target="_blank">Nye Lab at UNC</a>
+</footer>
