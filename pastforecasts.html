@@ -88,18 +88,60 @@
             border-top: 1px solid #eee;
             font-size: 0.9em;
         }
-	/* Tab buttons */
-  	.tab-btn {
-   	   background: #9CAF88; /* sage */
-   	   color: white;
-   	   padding: 8px 15px;
-    	   text-decoration: none;
-    	   border-radius: 8px;
-   	   font-weight: bold;
-  }
-  	.tab-btn:hover {
-    	   background: #8DA878; /* slightly darker sage */
-  }
+
+        /* Tab buttons */
+        .tab-btn {
+            background: #9CAF88; /* sage */
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        .tab-btn:hover {
+            background: #8DA878; /* slightly darker sage */
+        }
+
+        /* Collapsible menu */
+        .collapsible {
+            background-color: #9CAF88;
+            color: white;
+            cursor: pointer;
+            padding: 10px 15px;
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            text-align: left;
+            font-weight: bold;
+            outline: none;
+            margin-bottom: 10px;
+        }
+
+        .collapsible:hover {
+            background-color: #8DA878;
+        }
+
+        .content-collapsible {
+            display: none;
+            overflow: hidden;
+            padding-left: 15px;
+            margin-bottom: 20px;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .content-collapsible a {
+            display: block;
+            padding: 6px 0;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .content-collapsible a:hover {
+            background-color: #eee;
+            border-radius: 4px;
+            padding-left: 5px;
+        }
     </style>
 </head>
 <body>
@@ -117,32 +159,32 @@
 <h1>RHAP CAST Past forecasts!</h1>
 
 <div class="content-section">
-    <h2>December 2025 Forecasts (Dec 13–19)</h2>
-    <p>Select a map below:</p>
+    <h2>December 2025 Forecasts</h2>
 
-    <div style="display:flex; flex-direction:column; gap:15px; max-width:600px; margin:0 auto;">
-
-        <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/AHRH_1213_1219_map.html"
-           class="tab-btn">Atlantic herring & River herring joint probability</a>
-
-        <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/AMRH_1213_1219_map.html"
-           class="tab-btn">Atlantic mackerel & River herring joint probability</a>
-
-        <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/RH_1213_1219_map.html"
-           class="tab-btn">River herring individual map</a>
-
-        <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/AH_1213_1219_map.html"
-           class="tab-btn">Atlantic herring individual map</a>
-
-        <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/AM_1213_1219.html"
-           class="tab-btn">Atlantic mackerel individual map</a>
-
-        <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/forecast_1213_1219.pdf"
-           class="tab-btn" target="_blank">Forecast PDF for Dec 13 - Dec 19 (All Maps)</a>
-
+    <button class="collapsible">Dec 13 – Dec 19 Forecasts ▼</button>
+    <div class="content-collapsible">
+        <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/AHRH_1213_1219_map.html" class="tab-btn">Atlantic herring & River herring joint probability</a>
+        <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/AMRH_1213_1219_map.html" class="tab-btn">Atlantic mackerel & River herring joint probability</a>
+        <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/RH_1213_1219_map.html" class="tab-btn">River herring individual map</a>
+        <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/AH_1213_1219_map.html" class="tab-btn">Atlantic herring individual map</a>
+        <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/AM_1213_1219.html" class="tab-btn">Atlantic mackerel individual map</a>
+        <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/forecast_1213_1219.pdf" class="tab-btn" target="_blank">Forecast PDF (All Maps)</a>
     </div>
 </div>
 
 <footer class="footer-section">
     Brought to you by <a href="https://nye.unc.edu/" target="_blank">Nye Lab at UNC</a>
 </footer>
+
+<script>
+    // Collapsible menu functionality
+    const coll = document.querySelector(".collapsible");
+    const content = document.querySelector(".content-collapsible");
+
+    coll.addEventListener("click", function() {
+        content.style.display = (content.style.display === "flex") ? "none" : "flex";
+    });
+</script>
+
+</body>
+</html>
