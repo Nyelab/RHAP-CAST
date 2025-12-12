@@ -66,7 +66,7 @@
         .download-button {
             display: inline-block;
             padding: 15px 30px;
-            background-color: #4CAF50; /* Green */
+            background-color: #9CAF88; /* sage */
             color: white;
             text-decoration: none;
             border: none;
@@ -78,7 +78,7 @@
         }
 
         .download-button:hover {
-            background-color: #45a049;
+            background-color: #8DA878; /* slightly darker sage */
         }
 
         /* Footer */
@@ -230,6 +230,59 @@
         </div>
 
     </main>
+
+<div class="content-section">
+  <h2>Feedback / Questions</h2>
+
+  <!-- Question 1 -->
+  <form action="https://formspree.io/f/mgvgrnao" method = "POST">
+    <label for="q1">1. Do these forecasts look accurate?</label><br>
+    <textarea id="q1" name="q1" rows="3" cols="50" placeholder="Your answer (optional)"></textarea><br>
+    <button type="submit" class="tab-btn">Submit</button>
+  </form>
+<script>
+  const forms = document.querySelectorAll('form');
+  forms.forEach(f => {
+    f.addEventListener('submit', e => {
+      alert("Thank you! Your response was submitted anonymously.");
+    });
+  });
+</script>
+
+  <hr>
+
+  <!-- Question 2 -->
+  <form action="https://formspree.io/f/mnnelgpo" method = POST>
+    <label for="q2">2. Were these maps useful in planning on where to fish/ Did they work?</label><br>
+    <textarea id="q2" name="q2" rows="3" cols="50" placeholder="Your answer (optional)"></textarea><br>
+    <button type="submit" class="tab-btn">Submit</button>
+  </form>
+<script>
+  const forms = document.querySelectorAll('form');
+  forms.forEach(f => {
+    f.addEventListener('submit', e => {
+      alert("Thank you! Your response was submitted anonymously.");
+    });
+  });
+</script>
+
+  <hr>
+
+  <!-- Question 3 -->
+  <form action="https://formspree.io/f/xqarwypo" method = POST>
+    <label for="q3">3. Any suggestions for improvement?</label><br>
+    <textarea id="q3" name="q3" rows="3" cols="50" placeholder="Your answer (optional)"></textarea><br>
+    <button type="submit" class="tab-btn">Submit</button>
+  </form>
+<script>
+  const forms = document.querySelectorAll('form');
+  forms.forEach(f => {
+    f.addEventListener('submit', e => {
+      alert("Thank you! Your response was submitted anonymously.");
+    });
+  });
+</script>
+</div>
 
 	<a href="forecast_1213_1219.pdf" target="_blank"> Download forecast maps: 12/13 - 12/19</a>
 
