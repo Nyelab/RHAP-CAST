@@ -135,6 +135,18 @@
 
     </style>
 </head>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    window.toggleMap = function (id) {
+      var el = document.getElementById(id);
+      if (!el) {
+        alert("Map container not found: " + id);
+        return;
+      }
+      el.style.display = el.style.display === "none" ? "block" : "none";
+    };
+  });
+</script>
 <body>
 
 <nav style="background:#eee; padding:10px; display:flex; gap:15px;">
@@ -209,7 +221,7 @@ For all the maps below, warm colors like red and brown show places where the spe
   View River Herring Encounter Map
 </button>
 
-<div id="rh-map" class="hidden">
+<div id="rh-map" style="display:none;">
 
   <p class="intro-text">
     This map highlights areas with a high probability of encountering river herring.
@@ -237,7 +249,7 @@ For all the maps below, warm colors like red and brown show places where the spe
   View Atlantic Herring Encounter Map
 </button>
 
-<div id="ah-map" class="hidden">
+<div id="ah-map" style="display:none;">
 
   <p class="intro-text">
     This map shows predicted encounter probabilities for Atlantic herring.
@@ -266,7 +278,7 @@ For all the maps below, warm colors like red and brown show places where the spe
   View Atlantic Mackerel Encounter Map
 </button>
 
-<div id="am-map" class="hidden">
+<div id="am-map" style="display:none;">
 
   <p class="intro-text">
     This map predicts areas where Atlantic mackerel are most likely to be encountered.
