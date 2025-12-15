@@ -100,6 +100,28 @@
   	.tab-btn:hover {
     	   background: #8DA878; /* slightly darker sage */
   }
+
+
+ 	.hidden {
+    	  display: none;
+  }
+
+  	.toggle-btn {
+  	  display: inline-block;
+   	 padding: 12px 25px;
+   	 background-color: #9CAF88;
+    	color: white;
+    	border: none;
+   	 border-radius: 5px;
+   	 font-size: 1.1em;
+    	font-weight: bold;
+    	cursor: pointer;
+    	margin: 15px 0;
+  }
+
+  .toggle-btn:hover {
+    background-color: #8DA878;
+  }
     </style>
 </head>
 <body>
@@ -116,9 +138,12 @@
 
     <main class="content-section">
         <p class="intro-text">
-         The River Herring Avoidance Program Forecast (RHAPCAST) forecasts regions to maximize encounters of target species (Atlantic herring or Atlantic mackerel) while minimizing river herring bycatch. Forecasts are provided about one week in advance to help you plan. Look for a new forecast each Monday!
-	
-	Generally, the warmer colors on the maps (red/brown) represent areas that are predicted to have a low encounter probability of the species, and the cooler colors (blue) represent areas that are predicted to have high encounters of the species. 	
+
+The River Herring Avoidance Program Forecast (RHAPCAST) forecasts regions to maximize encounters of target species (Atlantic herring or Atlantic mackerel) while minimizing river herring bycatch.  Forecasts are provided about one week in advance to help you plan. Look for a new forecast each Monday!
+
+ 
+
+For all the maps below, warm colors like red and brown show places where the species is unlikely to be found. Cool colors like blue show places where it’s more likely to be found.	
 
 
         </p>
@@ -127,7 +152,7 @@
 
 	<main class="content-section">
         <p class="intro-text">
-		This map shows areas that predict a high encountering probability of Atlantic herring (blue) and areas that either also have a high encountering probability of river herring or low encountering probability of Atlantic herring (red/brown). The joint probability likelihood was estimated for each grid cell by multiplying the encounter probability of Atlantic herring by one subtracted by the encounter probability of river herring. The bright red area is a restricted fishing area for midwater trawls, and the solid black lines represent the river herring and shad bycatch cap management areas.	
+		The blue areas on the map show places where Atlantic herring are likely to be found on their own. The red and brown areas show places where river herring are also likely to show up, or where Atlantic herring aren’t very common. We recommend going to the blue areas to maximize catch of your target species and minimize river herring bycatch. To estimate this for each location, we combined the two species’ encounter probabilities.  
 
 
         </p>
@@ -150,8 +175,7 @@
 
 	<main class="content-section">
         <p class="intro-text">
-		This map shows areas that predict a high encountering probability of Atlantic mackerel (blue) and areas that either also have a high encountering probability of river herring or low encountering probability of Atlantic mackerel (red/brown). The joint probability likelihood was estimated for each grid cell by multiplying the encounter probability of Atlantic mackerel by one subtracted by the encounter probability of river herring. The bright red area is a restricted fishing area for midwater trawls, and the solid black lines represent the river herring and shad bycatch cap management areas.	
-
+		The blue areas on the map show places where Atlantic mackerel are likely to be found on their own. The red and brown areas show places where river herring are also likely to show up, or where Atlantic mackerel aren’t very common. We recommend going to the blue areas to maximize catch of your target species and minimize river herring bycatch. To estimate this for each location, we combined the two species’ encounter probabilities.  
 
         </p>
 
@@ -168,25 +192,21 @@
             </a>
         </div>
 
- 	<h2>December 13 – 19 Forecast to identify river herring encounters</h2>
+ 	
+        <button class="toggle-btn"
+        onclick="toggleMap('rh-map', this)">
+  Show map
+</button>
 
-	<main class="content-section">
-        <p class="intro-text">
-		This map shows areas that predict a high encountering probability of river herring (blue) and areas that predict a low encountering probability of river herring (red/brown). The bright red area is a restricted fishing area for Atlantic herring and mackerel midwater trawls, and the solid black lines represnt the river herring and shad bycatch cap management areas.
-        </p>
-
-        <div class="map-container">
-            <!-- Interactive Map -->
-            <iframe src="RH_1213_1219_map.html" title="Forecast Map"></iframe>
-            <p style="font-size: 0.9em; margin-top: 10px;">
-                (Interactive map — zoom & explore!)
-            </p>
-
-            <!-- Open Full Map Button -->
-            <a href="RH_1213_1219_map.html" target="_blank" class="download-button">
-                Open Full Map
-            </a>
-        </div>
+<div id="rh-map" class="map-container hidden">
+  <iframe src="RH_1213_1219_map.html"></iframe>
+  <p style="font-size: 0.9em; margin-top: 10px;">
+    This map shows areas that predict a high encountering probability of river herring (blue) and areas that predict a low encountering probability of river herring (red/brown). The bright red area is a restricted fishing area for Atlantic herring and mackerel midwater trawls, and the solid black lines represnt the river herring and shad bycatch cap management areas.
+  </p>
+  <a href="RH_1213_1219_map.html" target="_blank" class="download-button">
+    River herring forecast encounters
+  </a>
+</div>
 
  	<h2>December 13 – 19 Forecast to identify Atlantic herring encounters</h2>
 
@@ -284,7 +304,7 @@
 </script>
 </div>
 
-	<a href="forecast_1213_1219.pdf" target="_blank"> Download forecast maps: 12/13 - 12/19</a>
+	<a href="forecast_1213_1219.pdf" target="_blank"> Download forecast maps: 12/13 - 12/19</a><br>
 
 	<a href="RHAPCAST_model_background.pdf" target="_blank"> Download background information of RHAP CAST models</a>
 
