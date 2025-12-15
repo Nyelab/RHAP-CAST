@@ -111,16 +111,20 @@
    	 padding: 12px 25px;
    	 background-color: #9CAF88;
     	color: white;
-    	border: none;
-   	 border-radius: 5px;
-   	 font-size: 1.1em;
-    	font-weight: bold;
-    	cursor: pointer;
-    	margin: 15px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 15px 0;
   }
 
   .toggle-btn:hover {
     background-color: #8DA878;
+  }
+  function toggleMap(id) {
+    const el = document.getElementById(id);
+    el.classList.toggle("hidden");
   }
     </style>
 </head>
@@ -192,20 +196,32 @@ For all the maps below, warm colors like red and brown show places where the spe
             </a>
         </div>
 
- 	
-        <button class="toggle-btn"
-        onclick="toggleMap('rh-map', this)">
-  Show map
+ 	<h2>
+
+<button class="toggle-btn" onclick="toggleMap('rh-map')">
+  View River Herring encounter Map
 </button>
 
-<div id="rh-map" class="map-container hidden">
-  <iframe src="RH_1213_1219_map.html"></iframe>
-  <p style="font-size: 0.9em; margin-top: 10px;">
-    This map shows areas that predict a high encountering probability of river herring (blue) and areas that predict a low encountering probability of river herring (red/brown). The bright red area is a restricted fishing area for Atlantic herring and mackerel midwater trawls, and the solid black lines represnt the river herring and shad bycatch cap management areas.
+<div id="rh-map" class="hidden">
+
+  <p class="intro-text">
+    This map highlights areas with a high probability of encountering river herring.
+    Blue regions indicate higher encounter likelihood, while red and brown regions
+    indicate lower likelihood. Restricted fishing areas and bycatch cap management
+    areas are shown for reference.
   </p>
-  <a href="RH_1213_1219_map.html" target="_blank" class="download-button">
-    River herring forecast encounters
-  </a>
+
+  <div class="map-container">
+    <iframe src="RH_1213_1219_map.html" title="River Herring Encounter Map"></iframe>
+    <p style="font-size: 0.9em; margin-top: 10px;">
+      (Interactive map — zoom & explore!)
+    </p>
+
+    <a href="RH_1213_1219_map.html" target="_blank" class="download-button">
+      River Herring Map
+    </a>
+  </div>
+
 </div>
 
  	<h2>December 13 – 19 Forecast to identify Atlantic herring encounters</h2>
