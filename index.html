@@ -121,13 +121,18 @@
 
   .toggle-btn:hover {
     background-color: #8DA878;
-  }
-
   function toggleMap(id) {
     const el = document.getElementById(id);
     if (!el) return;
     el.classList.toggle("hidden");
   }
+
+  document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', () => {
+      alert("Thank you! Your response was submitted anonymously.");
+    });
+  });
+
     </style>
 </head>
 <body>
@@ -198,7 +203,7 @@ For all the maps below, warm colors like red and brown show places where the spe
             </a>
         </div>
 
- 	<h2>
+ 	<h2>December 13 – 19 Forecast to identify river herring encounters</h2>
 
 <button class="toggle-btn" onclick="toggleMap('rh-map')">
   View River Herring Encounter Map
@@ -226,7 +231,7 @@ For all the maps below, warm colors like red and brown show places where the spe
 
 </div>
 
- 	<h2>
+ 	<h2>December 13 – 19 Forecast to identify Atlantic herring encounters</h2>
 
 <button class="toggle-btn" onclick="toggleMap('ah-map')">
   View Atlantic Herring Encounter Map
@@ -254,7 +259,8 @@ For all the maps below, warm colors like red and brown show places where the spe
 </div>
 
  
-<h2>
+<h2>December 13 – 19 Forecast to identify Atlantic mackerel encounters</h2>
+
 
 <button class="toggle-btn" onclick="toggleMap('am-map')">
   View Atlantic Mackerel Encounter Map
@@ -292,14 +298,7 @@ For all the maps below, warm colors like red and brown show places where the spe
     <textarea id="q1" name="q1" rows="3" cols="50" placeholder="Your answer (optional)"></textarea><br>
     <button type="submit" class="tab-btn">Submit</button>
   </form>
-<script>
-  const forms = document.querySelectorAll('form');
-  forms.forEach(f => {
-    f.addEventListener('submit', e => {
-      alert("Thank you! Your response was submitted anonymously.");
-    });
-  });
-</script>
+
 
   <hr>
 
@@ -309,14 +308,7 @@ For all the maps below, warm colors like red and brown show places where the spe
     <textarea id="q2" name="q2" rows="3" cols="50" placeholder="Your answer (optional)"></textarea><br>
     <button type="submit" class="tab-btn">Submit</button>
   </form>
-<script>
-  const forms = document.querySelectorAll('form');
-  forms.forEach(f => {
-    f.addEventListener('submit', e => {
-      alert("Thank you! Your response was submitted anonymously.");
-    });
-  });
-</script>
+
 
   <hr>
 
@@ -326,14 +318,7 @@ For all the maps below, warm colors like red and brown show places where the spe
     <textarea id="q3" name="q3" rows="3" cols="50" placeholder="Your answer (optional)"></textarea><br>
     <button type="submit" class="tab-btn">Submit</button>
   </form>
-<script>
-  const forms = document.querySelectorAll('form');
-  forms.forEach(f => {
-    f.addEventListener('submit', e => {
-      alert("Thank you! Your response was submitted anonymously.");
-    });
-  });
-</script>
+
 </div>
 
 	<a href="forecast_1213_1219.pdf" target="_blank"> Download forecast maps: 12/13 - 12/19</a><br>
