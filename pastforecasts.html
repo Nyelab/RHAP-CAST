@@ -188,13 +188,20 @@
 </footer>
 
 <script>
-    // Collapsible menu functionality
-    const coll = document.querySelector(".collapsible");
-    const content = document.querySelector(".content-collapsible");
+  const collapsibles = document.querySelectorAll(".collapsible");
 
-    coll.addEventListener("click", function() {
-        content.style.display = (content.style.display === "flex") ? "none" : "flex";
+  collapsibles.forEach(btn => {
+    btn.addEventListener("click", function () {
+      const content = this.nextElementSibling;
+
+      if (content.style.display === "flex") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "flex";
+        content.style.flexDirection = "column";
+      }
     });
+  });
 </script>
 
 </body>
