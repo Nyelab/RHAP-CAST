@@ -170,6 +170,17 @@
         <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/AM_1213_1219.html" class="tab-btn">Atlantic mackerel individual map</a>
         <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/forecast_1213_1219.pdf" class="tab-btn" target="_blank">Forecast PDF (All Maps)</a>
     </div>
+
+<button class="collapsible">Dec 20 – Dec 26 Forecasts ▼</button>
+    <div class="content-collapsible">
+        <a href="December%202025%20forecasts/Dec%2020%20to%20Dec%2026/AHRH_1220_1226_map.html" class="tab-btn">Atlantic herring & River herring joint probability</a>
+        <a href="December%202025%20forecasts/Dec%2020%20to%20Dec%2026/AMRH_1220_1226_map.html" class="tab-btn">Atlantic mackerel & River herring joint probability</a>
+        <a href="December%202025%20forecasts/Dec%2020%20to%20Dec%2026/RH_1220_1226_map.html" class="tab-btn">River herring individual map</a>
+        <a href="December%202025%20forecasts/Dec%2020%20to%20Dec%2026/AH_1220_1226_map.html" class="tab-btn">Atlantic herring individual map</a>
+        <a href="December%202025%20forecasts/Dec%2020%20to%20Dec%2026/AM_1220_1226.html" class="tab-btn">Atlantic mackerel individual map</a>
+        <a href="December%202025%20forecasts/Dec%2020%20to%20Dec%2026/forecast_1220_1226.pdf" class="tab-btn" target="_blank">Forecast PDF (All Maps)</a>
+    </div>
+
 </div>
 
 <footer class="footer-section">
@@ -177,13 +188,20 @@
 </footer>
 
 <script>
-    // Collapsible menu functionality
-    const coll = document.querySelector(".collapsible");
-    const content = document.querySelector(".content-collapsible");
+  const collapsibles = document.querySelectorAll(".collapsible");
 
-    coll.addEventListener("click", function() {
-        content.style.display = (content.style.display === "flex") ? "none" : "flex";
+  collapsibles.forEach(btn => {
+    btn.addEventListener("click", function () {
+      const content = this.nextElementSibling;
+
+      if (content.style.display === "flex") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "flex";
+        content.style.flexDirection = "column";
+      }
     });
+  });
 </script>
 
 </body>
