@@ -190,19 +190,15 @@
 <script>
   document.querySelectorAll(".collapsible").forEach(btn => {
     btn.addEventListener("click", function () {
-      const content = this.parentElement.querySelector(
-        ".content-collapsible:not([data-open])"
-      ) || this.nextElementSibling;
+      const content = this.nextElementSibling;
 
-      if (!content) return;
+      if (!content || !content.classList.contains("content-collapsible")) return;
 
       if (content.style.display === "flex") {
         content.style.display = "none";
-        content.removeAttribute("data-open");
       } else {
         content.style.display = "flex";
         content.style.flexDirection = "column";
-        content.setAttribute("data-open", "true");
       }
     });
   });
