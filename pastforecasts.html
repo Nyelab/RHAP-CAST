@@ -156,7 +156,7 @@
     <p>RIVER HERRING AVOIDANCE PROGRAM FORECAST</p>
 </header>
 
-<h1>RHAP CAST Past forecasts!</h1>
+<h2>RHAP CAST Past forecasts!</h2>
 
 <div class="content-section">
     <h2>December 2025 Forecasts</h2>
@@ -188,21 +188,26 @@
 </footer>
 
 <script>
-  const collapsibles = document.querySelectorAll(".collapsible");
-
-  collapsibles.forEach(btn => {
+  document.querySelectorAll(".collapsible").forEach(btn => {
     btn.addEventListener("click", function () {
-      const content = this.nextElementSibling;
+      const content = this.parentElement.querySelector(
+        ".content-collapsible:not([data-open])"
+      ) || this.nextElementSibling;
+
+      if (!content) return;
 
       if (content.style.display === "flex") {
         content.style.display = "none";
+        content.removeAttribute("data-open");
       } else {
         content.style.display = "flex";
         content.style.flexDirection = "column";
+        content.setAttribute("data-open", "true");
       }
     });
   });
 </script>
+
 
 </body>
 </html>
