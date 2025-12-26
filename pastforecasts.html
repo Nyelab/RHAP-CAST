@@ -156,7 +156,7 @@
     <p>RIVER HERRING AVOIDANCE PROGRAM FORECAST</p>
 </header>
 
-<h1>RHAP CAST Past forecasts!</h1>
+<h2>RHAP CAST Past forecasts!</h2>
 
 <div class="content-section">
     <h2>December 2025 Forecasts</h2>
@@ -167,7 +167,7 @@
         <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/AMRH_1213_1219_map.html" class="tab-btn">Atlantic mackerel & River herring joint probability</a>
         <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/RH_1213_1219_map.html" class="tab-btn">River herring individual map</a>
         <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/AH_1213_1219_map.html" class="tab-btn">Atlantic herring individual map</a>
-        <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/AM_1213_1219.html" class="tab-btn">Atlantic mackerel individual map</a>
+        <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/AM_1213_1219_map.html" class="tab-btn">Atlantic mackerel individual map</a>
         <a href="December%202025%20forecasts/Dec%2013%20to%20Dec%2019/forecast_1213_1219.pdf" class="tab-btn" target="_blank">Forecast PDF (All Maps)</a>
     </div>
 
@@ -177,7 +177,7 @@
         <a href="December%202025%20forecasts/Dec%2020%20to%20Dec%2026/AMRH_1220_1226_map.html" class="tab-btn">Atlantic mackerel & River herring joint probability</a>
         <a href="December%202025%20forecasts/Dec%2020%20to%20Dec%2026/RH_1220_1226_map.html" class="tab-btn">River herring individual map</a>
         <a href="December%202025%20forecasts/Dec%2020%20to%20Dec%2026/AH_1220_1226_map.html" class="tab-btn">Atlantic herring individual map</a>
-        <a href="December%202025%20forecasts/Dec%2020%20to%20Dec%2026/AM_1220_1226.html" class="tab-btn">Atlantic mackerel individual map</a>
+        <a href="December%202025%20forecasts/Dec%2020%20to%20Dec%2026/AM_1220_1226_map.html" class="tab-btn">Atlantic mackerel individual map</a>
         <a href="December%202025%20forecasts/Dec%2020%20to%20Dec%2026/forecast_1220_1226.pdf" class="tab-btn" target="_blank">Forecast PDF (All Maps)</a>
     </div>
 
@@ -188,11 +188,11 @@
 </footer>
 
 <script>
-  const collapsibles = document.querySelectorAll(".collapsible");
-
-  collapsibles.forEach(btn => {
+  document.querySelectorAll(".collapsible").forEach(btn => {
     btn.addEventListener("click", function () {
       const content = this.nextElementSibling;
+
+      if (!content || !content.classList.contains("content-collapsible")) return;
 
       if (content.style.display === "flex") {
         content.style.display = "none";
@@ -203,6 +203,7 @@
     });
   });
 </script>
+
 
 </body>
 </html>
