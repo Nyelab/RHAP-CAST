@@ -123,6 +123,21 @@
     background-color: #8DA878;
 }
 
+/* Small preview images above maps */
+.preview-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.preview-row img {
+    width: 50%;          /* slightly smaller than map width */
+    max-width: 420px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
     </style>
 </head>
 
@@ -176,7 +191,7 @@ The model uses historical presence-absence data from NMFS trawl surveys, histori
     </iframe>
 </div>
 
-        <h2>February 14, 2026 to February 20, 2026 Forecast to maximize Atlantic herring encounters while minimizing river herring encounters</h2>
+        <h2>February 21, 2026 to February 27, 2026 Forecast to maximize Atlantic herring encounters while minimizing river herring encounters</h2>
 
 	<main class="content-section">
         <p class="intro-text">
@@ -186,19 +201,26 @@ The model uses historical presence-absence data from NMFS trawl surveys, histori
 
 
         <div class="map-container">
+
+	        <!-- Preview images -->
+    	<div class="preview-row">
+        <img src="AH_static_0221_0227.png" alt="Atlantic Herring">
+        <img src="RH_static_0221_0227.png" alt="River Herring">
+    	</div>
+
             <!-- Interactive Map -->
-            <iframe src="AHRH_0214_0220_map.html" title="Forecast Map"></iframe>
+            <iframe src="AHRH_0221_0227_map.html" title="Forecast Map"></iframe>
             <p style="font-size: 0.9em; margin-top: 10px;">
                 (Interactive map — zoom & explore!)
             </p>
 
             <!-- Open Full Map Button -->
-            <a href="AHRH_0214_0220_map.html" target="_blank" class="download-button">
+            <a href="AHRH_0221_0227_map.html" target="_blank" class="download-button">
                 Open Full Map
             </a>
         </div>
 
- 	<h2>February 14, 2026 to February 20, 2026 Forecast to maximize Atlantic mackerel encounters while minimizing river herring encounters</h2>
+ 	<h2>February 21, 2026 to February 27, 2026 Forecast to maximize Atlantic mackerel encounters while minimizing river herring encounters</h2>
 
 	<main class="content-section">
         <p class="intro-text">
@@ -207,22 +229,31 @@ The model uses historical presence-absence data from NMFS trawl surveys, histori
         </p>
 
         <div class="map-container">
+
+	        <!-- Preview images -->
+    	<div class="preview-row">
+        <img src="AM_static_0221_0227.png" alt="Atlantic Herring">
+        <img src="RH_static_0221_0227.png" alt="River Herring">
+    	</div>
+
             <!-- Interactive Map -->
-            <iframe src="AMRH_0214_0220_map.html" title="Forecast Map"></iframe>
+            <iframe src="AMRH_0221_0227_map.html" title="Forecast Map"></iframe>
             <p style="font-size: 0.9em; margin-top: 10px;">
                 (Interactive map — zoom & explore!)
             </p>
 
             <!-- Open Full Map Button -->
-            <a href="AMRH_0214_0220_map.html" target="_blank" class="download-button">
+            <a href="AMRH_0221_0227_map.html" target="_blank" class="download-button">
                 Open Full Map
             </a>
         </div>
 
  
+<h2> Individual maps for each species </h2>
+
 
 <button class="toggle-btn" onclick="toggleMap('rh-map')">
-  View River Herring Encounter Map
+  View River Herring Map
 </button>
 
 <div id="rh-map" style="display:none;">
@@ -234,13 +265,13 @@ The model uses historical presence-absence data from NMFS trawl surveys, histori
   </p>
 
   <div class="map-container">
-    <iframe src="RH_0214_0220_map.html" title="River Herring Encounter Map"></iframe>
+    <iframe src="RH_0221_0227_map.html" title="River Herring Encounter Map"></iframe>
     <p style="font-size: 0.9em; margin-top: 10px;">
       (Interactive map — zoom & explore!)
     </p>
 
-    <a href="RH_0214_0220_map.html" target="_blank" class="download-button">
-      February 14, 2026 to February 20, 2026 River Herring Map
+    <a href="RH_0221_0227_map.html" target="_blank" class="download-button">
+      February 21, 2026 to February 27, 2026 River Herring Map
     </a>
   </div>
 
@@ -248,7 +279,7 @@ The model uses historical presence-absence data from NMFS trawl surveys, histori
 
  
 <button class="toggle-btn" onclick="toggleMap('ah-map')">
-  View Atlantic Herring Encounter Map
+  View Atlantic Herring Map
 </button>
 
 <div id="ah-map" style="display:none;">
@@ -260,13 +291,13 @@ The model uses historical presence-absence data from NMFS trawl surveys, histori
   </p>
 
   <div class="map-container">
-    <iframe src="AH_0214_0220_map.html" title="Atlantic Herring Encounter Map"></iframe>
+    <iframe src="AH_0221_0227_map.html" title="Atlantic Herring Encounter Map"></iframe>
     <p style="font-size: 0.9em; margin-top: 10px;">
       (Interactive map — zoom & explore!)
     </p>
 
-    <a href="AH_0214_0220_map.html" target="_blank" class="download-button">
-      February 14, 2026 to February 20, 2026 Atlantic Herring Map
+    <a href="AH_0221_0227_map.html" target="_blank" class="download-button">
+      February 21, 2026 to February 27, 2026 Atlantic Herring Map
     </a>
   </div>
 
@@ -276,7 +307,7 @@ The model uses historical presence-absence data from NMFS trawl surveys, histori
 
 
 <button class="toggle-btn" onclick="toggleMap('am-map')">
-  View Atlantic Mackerel Encounter Map
+  View Atlantic Mackerel Map
 </button>
 
 <div id="am-map" style="display:none;">
@@ -288,13 +319,13 @@ The model uses historical presence-absence data from NMFS trawl surveys, histori
   </p>
 
   <div class="map-container">
-    <iframe src="AM_0214_0220_map.html" title="Atlantic Mackerel Encounter Map"></iframe>
+    <iframe src="AM_0221_0227_map.html" title="Atlantic Mackerel Encounter Map"></iframe>
     <p style="font-size: 0.9em; margin-top: 10px;">
       (Interactive map — zoom & explore!)
     </p>
 
-    <a href="AM_0214_0220_map.html" target="_blank" class="download-button">
-      February 14, 2026 to February 20, 2026 Atlantic Mackerel Map
+    <a href="AM_0221_0227_map.html" target="_blank" class="download-button">
+      February 21, 2026 to February 27, 2026 Atlantic Mackerel Map
     </a>
   </div>
 
@@ -334,7 +365,7 @@ The model uses historical presence-absence data from NMFS trawl surveys, histori
 
 </div>
 
-	<a href="forecast_0214_0220.pdf" target="_blank"> Download forecast maps: 02/14 - 02/20</a><br>
+	<a href="forecast_0221_0227.pdf" target="_blank"> Download forecast maps: 02/21 - 02/27</a><br>
 
 	<a href="RHAPCAST_model_background.pdf" target="_blank"> Download background information of RHAP CAST models</a>
 
