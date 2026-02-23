@@ -17134,15 +17134,15 @@ dev.off()
 
 
 
-# forecast for 02-21-2026 to 02-27-2026 ----
-## forecast on 02-16-2026
-## hindcast on 02-16 2006-2026
+# forecast for 02-28-2026 to 03-06-2026 ----
+## forecast on 02-23-2026
+## hindcast on 02-23 2006-2026
 
 ## ECMWF Real time ----
 ### perturbed with 100 members
 
-# 02-21-2026
-ECMWF_rt  <- rast("ECMWF_0221_rt.grib")
+# 02-28-2026
+ECMWF_rt  <- rast("ECMWF_0228_rt.grib")
 shape_rt <- st_transform(shape, crs(ECMWF_rt))
 cropped_rt <- crop(ECMWF_rt, shape_rt)
 masked_rt <- mask(cropped_rt, shape_rt)
@@ -17162,24 +17162,24 @@ names(rt)[1:2] <- c("longitude","latitude")
 rt_check <- rt %>% group_by(forecast_time) %>%
   summarise(n())
 
-rt_0221 <- rt %>% filter(forecast_time %in% c("2026-02-21"))
+rt_0228 <- rt %>% filter(forecast_time %in% c("2026-02-28"))
 
 
-rt_mean21 <- rt_0221 %>% group_by(longitude, latitude) %>%
+rt_mean28 <- rt_0228 %>% group_by(longitude, latitude) %>%
   summarise(temp_K = mean(temp_K))
 
-rt_mean21$temp_C <- rt_mean21$temp_K - 273.15
+rt_mean28$temp_C <- rt_mean28$temp_K - 273.15
 
-rt_mean21 <- rt_mean21 %>% dplyr::select(!temp_K)
+rt_mean28 <- rt_mean28 %>% dplyr::select(!temp_K)
 
 
 # change back into a raster
 
-rt_ras21 <- rast(rt_mean21)
-plot(rt_ras21)
+rt_ras28 <- rast(rt_mean28)
+plot(rt_ras28)
 
-# 02-22-2026
-ECMWF_rt  <- rast("ECMWF_0222_rt.grib")
+# 03-01-2026
+ECMWF_rt  <- rast("ECMWF_0301_rt.grib")
 shape_rt <- st_transform(shape, crs(ECMWF_rt))
 cropped_rt <- crop(ECMWF_rt, shape_rt)
 masked_rt <- mask(cropped_rt, shape_rt)
@@ -17199,25 +17199,25 @@ names(rt)[1:2] <- c("longitude","latitude")
 rt_check <- rt %>% group_by(forecast_time) %>%
   summarise(n())
 
-rt_0222 <- rt %>% filter(forecast_time %in% c("2026-02-22"))
+rt_0301 <- rt %>% filter(forecast_time %in% c("2026-03-01"))
 
 
-rt_mean22 <- rt_0222 %>% group_by(longitude, latitude) %>%
+rt_mean01 <- rt_0301 %>% group_by(longitude, latitude) %>%
   summarise(temp_K = mean(temp_K))
 
-rt_mean22$temp_C <- rt_mean22$temp_K - 273.15
+rt_mean01$temp_C <- rt_mean01$temp_K - 273.15
 
-rt_mean22 <- rt_mean22 %>% dplyr::select(!temp_K)
+rt_mean01 <- rt_mean01 %>% dplyr::select(!temp_K)
 
 
 # change back into a raster
 
-rt_ras22 <- rast(rt_mean22)
-plot(rt_ras22)
+rt_ras01 <- rast(rt_mean01)
+plot(rt_ras01)
 
 
-# 02-23-2026
-ECMWF_rt  <- rast("ECMWF_0223_rt.grib")
+# 03-02-2026
+ECMWF_rt  <- rast("ECMWF_0302_rt.grib")
 shape_rt <- st_transform(shape, crs(ECMWF_rt))
 cropped_rt <- crop(ECMWF_rt, shape_rt)
 masked_rt <- mask(cropped_rt, shape_rt)
@@ -17237,24 +17237,24 @@ names(rt)[1:2] <- c("longitude","latitude")
 rt_check <- rt %>% group_by(forecast_time) %>%
   summarise(n())
 
-rt_0223 <- rt %>% filter(forecast_time %in% c("2026-02-23"))
+rt_0302 <- rt %>% filter(forecast_time %in% c("2026-03-02"))
 
 
-rt_mean23 <- rt_0223 %>% group_by(longitude, latitude) %>%
+rt_mean02 <- rt_0302 %>% group_by(longitude, latitude) %>%
   summarise(temp_K = mean(temp_K))
 
-rt_mean23$temp_C <- rt_mean23$temp_K - 273.15
+rt_mean02$temp_C <- rt_mean02$temp_K - 273.15
 
-rt_mean23 <- rt_mean23 %>% dplyr::select(!temp_K)
+rt_mean02 <- rt_mean02 %>% dplyr::select(!temp_K)
 
 
 # change back into a raster
 
-rt_ras23 <- rast(rt_mean23)
-plot(rt_ras23)
+rt_ras02 <- rast(rt_mean02)
+plot(rt_ras02)
 
-# 02-24-2026
-ECMWF_rt  <- rast("ECMWF_0224_rt.grib")
+# 03-03-2026
+ECMWF_rt  <- rast("ECMWF_0303_rt.grib")
 shape_rt <- st_transform(shape, crs(ECMWF_rt))
 cropped_rt <- crop(ECMWF_rt, shape_rt)
 masked_rt <- mask(cropped_rt, shape_rt)
@@ -17274,24 +17274,24 @@ names(rt)[1:2] <- c("longitude","latitude")
 rt_check <- rt %>% group_by(forecast_time) %>%
   summarise(n())
 
-rt_0224 <- rt %>% filter(forecast_time %in% c("2026-02-24"))
+rt_0303 <- rt %>% filter(forecast_time %in% c("2026-03-03"))
 
 
-rt_mean24 <- rt_0224 %>% group_by(longitude, latitude) %>%
+rt_mean03 <- rt_0303 %>% group_by(longitude, latitude) %>%
   summarise(temp_K = mean(temp_K))
 
-rt_mean24$temp_C <- rt_mean24$temp_K - 273.15
+rt_mean03$temp_C <- rt_mean03$temp_K - 273.15
 
-rt_mean24 <- rt_mean24 %>% dplyr::select(!temp_K)
+rt_mean03 <- rt_mean03 %>% dplyr::select(!temp_K)
 
 
 # change back into a raster
 
-rt_ras24 <- rast(rt_mean24)
-plot(rt_ras24)
+rt_ras03 <- rast(rt_mean03)
+plot(rt_ras03)
 
-# 02-25-2026
-ECMWF_rt  <- rast("ECMWF_0225_rt.grib")
+# 03-04-2026
+ECMWF_rt  <- rast("ECMWF_0304_rt.grib")
 shape_rt <- st_transform(shape, crs(ECMWF_rt))
 cropped_rt <- crop(ECMWF_rt, shape_rt)
 masked_rt <- mask(cropped_rt, shape_rt)
@@ -17311,24 +17311,24 @@ names(rt)[1:2] <- c("longitude","latitude")
 rt_check <- rt %>% group_by(forecast_time) %>%
   summarise(n())
 
-rt_0225 <- rt %>% filter(forecast_time %in% c("2026-02-25"))
+rt_0304 <- rt %>% filter(forecast_time %in% c("2026-03-04"))
 
 
-rt_mean25 <- rt_0225 %>% group_by(longitude, latitude) %>%
+rt_mean04 <- rt_0304 %>% group_by(longitude, latitude) %>%
   summarise(temp_K = mean(temp_K))
 
-rt_mean25$temp_C <- rt_mean25$temp_K - 273.15
+rt_mean04$temp_C <- rt_mean04$temp_K - 273.15
 
-rt_mean25 <- rt_mean25 %>% dplyr::select(!temp_K)
+rt_mean04 <- rt_mean04 %>% dplyr::select(!temp_K)
 
 
 # change back into a raster
 
-rt_ras25 <- rast(rt_mean25)
-plot(rt_ras25)
+rt_ras04 <- rast(rt_mean04)
+plot(rt_ras04)
 
-# 02-26-2026
-ECMWF_rt  <- rast("ECMWF_0226_rt.grib")
+# 03-05-2026
+ECMWF_rt  <- rast("ECMWF_0305_rt.grib")
 shape_rt <- st_transform(shape, crs(ECMWF_rt))
 cropped_rt <- crop(ECMWF_rt, shape_rt)
 masked_rt <- mask(cropped_rt, shape_rt)
@@ -17348,24 +17348,24 @@ names(rt)[1:2] <- c("longitude","latitude")
 rt_check <- rt %>% group_by(forecast_time) %>%
   summarise(n())
 
-rt_0226 <- rt %>% filter(forecast_time %in% c("2026-02-26"))
+rt_0305 <- rt %>% filter(forecast_time %in% c("2026-03-05"))
 
 
-rt_mean26 <- rt_0226 %>% group_by(longitude, latitude) %>%
+rt_mean05 <- rt_0305 %>% group_by(longitude, latitude) %>%
   summarise(temp_K = mean(temp_K))
 
-rt_mean26$temp_C <- rt_mean26$temp_K - 273.15
+rt_mean05$temp_C <- rt_mean05$temp_K - 273.15
 
-rt_mean26 <- rt_mean26 %>% dplyr::select(!temp_K)
+rt_mean05 <- rt_mean05 %>% dplyr::select(!temp_K)
 
 
 # change back into a raster
 
-rt_ras26 <- rast(rt_mean26)
-plot(rt_ras26)
+rt_ras05 <- rast(rt_mean05)
+plot(rt_ras05)
 
-# 02-27-2026
-ECMWF_rt  <- rast("ECMWF_0227_rt.grib")
+# 03-06-2026
+ECMWF_rt  <- rast("ECMWF_0306_rt.grib")
 shape_rt <- st_transform(shape, crs(ECMWF_rt))
 cropped_rt <- crop(ECMWF_rt, shape_rt)
 masked_rt <- mask(cropped_rt, shape_rt)
@@ -17385,26 +17385,26 @@ names(rt)[1:2] <- c("longitude","latitude")
 rt_check <- rt %>% group_by(forecast_time) %>%
   summarise(n())
 
-rt_0227 <- rt %>% filter(forecast_time %in% c("2026-02-27"))
+rt_0306 <- rt %>% filter(forecast_time %in% c("2026-03-06"))
 
 
-rt_mean27 <- rt_0227 %>% group_by(longitude, latitude) %>%
+rt_mean06 <- rt_0306 %>% group_by(longitude, latitude) %>%
   summarise(temp_K = mean(temp_K))
 
-rt_mean27$temp_C <- rt_mean27$temp_K - 273.15
+rt_mean06$temp_C <- rt_mean06$temp_K - 273.15
 
-rt_mean27 <- rt_mean27 %>% dplyr::select(!temp_K)
+rt_mean06 <- rt_mean06 %>% dplyr::select(!temp_K)
 
 
 # change back into a raster
 
-rt_ras27 <- rast(rt_mean27)
-plot(rt_ras27)
+rt_ras06 <- rast(rt_mean06)
+plot(rt_ras06)
 
 # summarizing over the 7 days
 
-rt_df <- rbind.data.frame(rt_mean21, rt_mean22, rt_mean23, rt_mean24, rt_mean25,
-                          rt_mean26, rt_mean27)
+rt_df <- rbind.data.frame(rt_mean28, rt_mean01, rt_mean02, rt_mean03, rt_mean04,
+                          rt_mean05, rt_mean06)
 
 rt_mean <- rt_df %>% group_by(longitude, latitude) %>%
   summarise(temp_C = mean(temp_C))
@@ -17416,7 +17416,7 @@ plot(rt_ras)
 ## ECMWF Hindcast ----
 ### perturbed with 10 members
 
-ECMWF_hc<- rast("ECMWF_0221_0227_hc.grib")
+ECMWF_hc<- rast("ECMWF_0228_0306_hc.grib")
 
 shape_hc <- st_transform(shape, crs(ECMWF_hc))
 cropped_hc <- crop(ECMWF_hc, shape_hc)
@@ -17428,8 +17428,8 @@ all_dates <- do.call(
   c,
   lapply(years, function(y) {
     dates <- seq(
-      from = as.Date(sprintf("%d-02-21", y)),
-      to   = as.Date(sprintf("%d-02-27", y)),
+      from = as.Date(sprintf("%d-02-28", y)),
+      to   = as.Date(sprintf("%d-03-06", y)),
       by = "day"
     )
     
@@ -17532,15 +17532,21 @@ SST_check <- SST_mean %>% group_by(month, day) %>%
 SST_feb <- subset(SST_mean, month == 2)
 
 
-SST_0221_0227 <- SST_feb %>% filter(day %in% c(21:27))
+SST_0228 <- SST_feb %>% filter(day == 28)
+
+SST_mar <- subset(SST_mean, month == 3)
+
+SST_0301_0306 <- SST_mar %>% filter(day %in% c(01:06))
+
+SST_0228_0306 <- rbind.data.frame(SST_0228, SST_0301_0306)
 
 
-SST_0221 <- SST_0221_0227 %>% group_by(longitude, latitude) %>%
+SST_0228 <- SST_0228_0306 %>% group_by(longitude, latitude) %>%
   summarise(temp_C = mean(temp_C))
 
 # turn back into a raster
 
-sst <- rast(SST_0221)
+sst <- rast(SST_0228)
 plot(sst)
 
 # Corrected SST ----
@@ -17560,7 +17566,7 @@ names(ECMWF_df)[1:2] <- c("LON","LAT")
 
 library(lubridate)
 
-ECMWF_df$date <- as.Date("2026-02-21")
+ECMWF_df$date <- as.Date("2026-02-28")
 
 ECMWF_df$julian_day <- yday(ECMWF_df$date)
 
@@ -17896,7 +17902,7 @@ AM_plot <- leaflet() %>%
 
 
 library(htmlwidgets)
-saveWidget(AM_plot, file = "AM_0221_0227_map.html", selfcontained = TRUE)
+saveWidget(AM_plot, file = "AM_0228_0306_map.html", selfcontained = TRUE)
 
 
 ## AH ----
@@ -17985,8 +17991,9 @@ library(leaflet)
 
 grid_sf_ll      <- st_transform(grid_sf, 4326)
 states_clipped_ll <- st_transform(states_clipped, 4326)
-restrict_ll     <- st_transform(restrict, 4326)
+#restrict_ll     <- st_transform(restrict, 4326)
 area_clip_ll    <- st_transform(area_clip, 4326)
+AHarea_clip_ll <- st_transform(AHarea_clip, 4326)
 
 library(sf)
 library(rnaturalearth)
@@ -18082,7 +18089,7 @@ AH_plot <- leaflet() %>%
   
   # area_clip outline (thick black)
   addPolylines(
-    data = area_clip_ll,
+    data = AHarea_clip_ll,
     color = "black",
     weight = 3
   ) %>%
@@ -18166,7 +18173,7 @@ AH_plot <- leaflet() %>%
 
 
 library(htmlwidgets)
-saveWidget(AH_plot, file = "AH_0221_0227_map.html", selfcontained = TRUE)
+saveWidget(AH_plot, file = "AH_0228_0306_map.html", selfcontained = TRUE)
 
 
 ## RH ---- 
@@ -18433,7 +18440,7 @@ RH_plot <- leaflet() %>%
 
 
 library(htmlwidgets)
-saveWidget(RH_plot, file = "RH_0221_0227_map.html", selfcontained = TRUE)
+saveWidget(RH_plot, file = "RH_0228_0306_map.html", selfcontained = TRUE)
 
 
 
@@ -18462,7 +18469,7 @@ AHRH1 <- ggplot(AHRH_poly) +
   geom_sf(data = AHarea_clip, fill = NA, color = "black", linewidth = 1) +
   theme_classic() +
   labs(fill = "Probability", color = "Presence") +
-  ggtitle("February 21, 2026 to February 27, 2026: Atlantic Herring * (1-River Herring)") +
+  ggtitle("February 28, 2026 to March 6, 2026: Atlantic Herring * (1-River Herring)") +
   coord_sf(crs = 32619) +
   annotation_north_arrow(location = "tl",
                          which_north = "true",
@@ -18664,7 +18671,7 @@ AHRH <- leaflet() %>%
 
 
 library(htmlwidgets)
-saveWidget(AHRH, file = "AHRH_0221_0227_map.html", selfcontained = TRUE)
+saveWidget(AHRH, file = "AHRH_0228_0306_map.html", selfcontained = TRUE)
 
 
 
@@ -18688,7 +18695,7 @@ AMRH1 <- ggplot(AMRH_poly) +
   #geom_sf(data = area_clip, fill = NA, color = "black", linewidth = 1) +
   theme_classic() +
   labs(fill = "Probability", color = "Presence") +
-  ggtitle("February 21, 2026 to February 27, 2026: Atlantic Mackerel * (1-River Herring)") +
+  ggtitle("February 28, 2026 to March 6, 2026: Atlantic Mackerel * (1-River Herring)") +
   coord_sf(crs = 32619) +
   annotation_north_arrow(location = "tl",
                          which_north = "true",
@@ -18860,7 +18867,7 @@ AMRH <- leaflet() %>%
         box-shadow: 0 2px 6px rgba(0,0,0,0.25);
         pointer-events: none;
       \">
-        Forecast to maximize Atlantic mackerel encouters <br>
+        Forecast to maximize Atlantic mackerel encounters <br>
         while minimizing river herring encounters
       </div>
     `;
@@ -18880,14 +18887,14 @@ AMRH <- leaflet() %>%
 
 
 library(htmlwidgets)
-saveWidget(AMRH, file = "AMRH_0221_0227_map.html", selfcontained = TRUE)
+saveWidget(AMRH, file = "AMRH_0228_0306_map.html", selfcontained = TRUE)
 
 
 
 # saving pdf of plots ----
 library(patchwork)
 
-pdf("forecast_0221_0227.pdf", width = 8, height = 6)
+pdf("forecast_0228_0306.pdf", width = 8, height = 6)
 
 (RH1 + AH1)
 print(AHRH1)
@@ -18980,7 +18987,7 @@ AM1_ci <- ggplot() +
   theme_classic() +
   coord_sf(crs = 32619) +
   labs(fill = "CI width", color = "Presence") +
-  ggtitle("Febuary 14 - February 20: Atlantic Mackerel") 
+  ggtitle("Febuary 28 - March 6: Atlantic Mackerel") 
 #theme(legend.position = "none") +
 # annotation_north_arrow(location = "tl",
 #                        which_north = "true",
@@ -19041,7 +19048,7 @@ AM1_cv <- ggplot() +
   theme_classic() +
   coord_sf(crs = 32619) +
   labs(fill = "CV", color = "Presence") +
-  ggtitle("Febuary 14 - February 20: Atlantic Mackerel") 
+  ggtitle("Febuary 28 - March 6: Atlantic Mackerel") 
 #theme(legend.position = "none") +
 # annotation_north_arrow(location = "tl",
 #                        which_north = "true",
@@ -19126,7 +19133,7 @@ AH1_ci <- ggplot() +
   theme_classic() +
   coord_sf(crs = 32619) +
   labs(fill = "CI width", color = "Presence") +
-  ggtitle("February 14 - February 20: Atlantic Herring") 
+  ggtitle("February 28 - March 6: Atlantic Herring") 
 
 s2s_AHcv <- s2s_df %>% dplyr::select(LON, LAT, cv)
 
@@ -19177,7 +19184,7 @@ AH1_cv <- ggplot() +
   theme_classic() +
   coord_sf(crs = 32619) +
   labs(fill = "CV", color = "Presence") +
-  ggtitle("February 14 - February 20: Atlantic Herring") 
+  ggtitle("February 28 - March 6: Atlantic Herring") 
 
 
 ## RH ---- 
@@ -19257,7 +19264,7 @@ RH1_ci <- ggplot() +
   theme_classic() +
   coord_sf(crs = 32619) +
   labs(fill = "CI width", color = "Presence") +
-  ggtitle("February 14 - February 20: River Herring") 
+  ggtitle("February 28 - March 6: River Herring") 
 
 s2s_RHcv <- s2s_df %>% dplyr::select(LON, LAT, cv)
 
@@ -19308,12 +19315,12 @@ RH1_cv <- ggplot() +
   theme_classic() +
   coord_sf(crs = 32619) +
   labs(fill = "CV", color = "Presence") +
-  ggtitle("February 14 - February 20: River Herring") 
+  ggtitle("February 28 - March 6: River Herring") 
 
 # saving pdf of plots ----
 library(patchwork)
 
-pdf("forecast_0221_0227_uncertainty.pdf", width = 8, height = 6)
+pdf("forecast_0228_0306_uncertainty.pdf", width = 8, height = 6)
 
 (AM1_ci + AM1_cv)
 (AH1_ci + AH1_cv)
@@ -19321,6 +19328,8 @@ pdf("forecast_0221_0227_uncertainty.pdf", width = 8, height = 6)
 
 
 dev.off()
+
+
 
 
 
