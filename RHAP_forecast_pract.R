@@ -32581,3 +32581,2214 @@ dev.off()
 
 
 
+
+
+# forecast for 04-18-2026 to 04-24-2026 ----
+## forecast on 04-13-2026
+## hindcast on 04-13 2006-2026
+
+## ECMWF Real time ----
+### perturbed with 100 members
+
+# 04-18-2026
+ECMWF_rt  <- rast("ECMWF_0418_rt.grib")
+shape_rt <- st_transform(shape, crs(ECMWF_rt))
+cropped_rt <- crop(ECMWF_rt, shape_rt)
+masked_rt <- mask(cropped_rt, shape_rt)
+
+
+time_rt <- time(masked_rt)
+
+ECMWFrt_df <- as.data.frame(masked_rt, xy = TRUE, na.rm = TRUE)
+names(ECMWFrt_df)
+names(ECMWFrt_df)[-(1:2)] <- as.character(time_rt)
+
+
+rt <- pivot_longer(ECMWFrt_df, cols = -c(x,y), names_to = "forecast_time",
+                   values_to = "temp_K")
+names(rt)[1:2] <- c("longitude","latitude")
+
+rt_check <- rt %>% group_by(forecast_time) %>%
+  summarise(n())
+
+rt_0418 <- rt %>% filter(forecast_time %in% c("2026-04-18"))
+
+
+rt_mean18 <- rt_0418 %>% group_by(longitude, latitude) %>%
+  summarise(temp_K = mean(temp_K))
+
+rt_mean18$temp_C <- rt_mean18$temp_K - 273.15
+
+rt_mean18 <- rt_mean18 %>% dplyr::select(!temp_K)
+
+
+# change back into a raster
+
+rt_ras18 <- rast(rt_mean18)
+plot(rt_ras18)
+
+# 04-19-2026
+ECMWF_rt  <- rast("ECMWF_0419_rt.grib")
+shape_rt <- st_transform(shape, crs(ECMWF_rt))
+cropped_rt <- crop(ECMWF_rt, shape_rt)
+masked_rt <- mask(cropped_rt, shape_rt)
+
+
+time_rt <- time(masked_rt)
+
+ECMWFrt_df <- as.data.frame(masked_rt, xy = TRUE, na.rm = TRUE)
+names(ECMWFrt_df)
+names(ECMWFrt_df)[-(1:2)] <- as.character(time_rt)
+
+
+rt <- pivot_longer(ECMWFrt_df, cols = -c(x,y), names_to = "forecast_time",
+                   values_to = "temp_K")
+names(rt)[1:2] <- c("longitude","latitude")
+
+rt_check <- rt %>% group_by(forecast_time) %>%
+  summarise(n())
+
+rt_0419 <- rt %>% filter(forecast_time %in% c("2026-04-19"))
+
+
+rt_mean19 <- rt_0419 %>% group_by(longitude, latitude) %>%
+  summarise(temp_K = mean(temp_K))
+
+rt_mean19$temp_C <- rt_mean19$temp_K - 273.15
+
+rt_mean19 <- rt_mean19 %>% dplyr::select(!temp_K)
+
+
+# change back into a raster
+
+rt_ras19 <- rast(rt_mean19)
+plot(rt_ras19)
+
+
+# 04-20-2026
+ECMWF_rt  <- rast("ECMWF_0420_rt.grib")
+shape_rt <- st_transform(shape, crs(ECMWF_rt))
+cropped_rt <- crop(ECMWF_rt, shape_rt)
+masked_rt <- mask(cropped_rt, shape_rt)
+
+
+time_rt <- time(masked_rt)
+
+ECMWFrt_df <- as.data.frame(masked_rt, xy = TRUE, na.rm = TRUE)
+names(ECMWFrt_df)
+names(ECMWFrt_df)[-(1:2)] <- as.character(time_rt)
+
+
+rt <- pivot_longer(ECMWFrt_df, cols = -c(x,y), names_to = "forecast_time",
+                   values_to = "temp_K")
+names(rt)[1:2] <- c("longitude","latitude")
+
+rt_check <- rt %>% group_by(forecast_time) %>%
+  summarise(n())
+
+rt_0420 <- rt %>% filter(forecast_time %in% c("2026-04-20"))
+
+
+rt_mean20 <- rt_0420 %>% group_by(longitude, latitude) %>%
+  summarise(temp_K = mean(temp_K))
+
+rt_mean20$temp_C <- rt_mean20$temp_K - 273.15
+
+rt_mean20 <- rt_mean20 %>% dplyr::select(!temp_K)
+
+
+# change back into a raster
+
+rt_ras20 <- rast(rt_mean20)
+plot(rt_ras20)
+
+# 04-21-2026
+ECMWF_rt  <- rast("ECMWF_0421_rt.grib")
+shape_rt <- st_transform(shape, crs(ECMWF_rt))
+cropped_rt <- crop(ECMWF_rt, shape_rt)
+masked_rt <- mask(cropped_rt, shape_rt)
+
+
+time_rt <- time(masked_rt)
+
+ECMWFrt_df <- as.data.frame(masked_rt, xy = TRUE, na.rm = TRUE)
+names(ECMWFrt_df)
+names(ECMWFrt_df)[-(1:2)] <- as.character(time_rt)
+
+
+rt <- pivot_longer(ECMWFrt_df, cols = -c(x,y), names_to = "forecast_time",
+                   values_to = "temp_K")
+names(rt)[1:2] <- c("longitude","latitude")
+
+rt_check <- rt %>% group_by(forecast_time) %>%
+  summarise(n())
+
+rt_0421 <- rt %>% filter(forecast_time %in% c("2026-04-21"))
+
+
+rt_mean21 <- rt_0421 %>% group_by(longitude, latitude) %>%
+  summarise(temp_K = mean(temp_K))
+
+rt_mean21$temp_C <- rt_mean21$temp_K - 273.15
+
+rt_mean21 <- rt_mean21 %>% dplyr::select(!temp_K)
+
+
+# change back into a raster
+
+rt_ras21 <- rast(rt_mean21)
+plot(rt_ras21)
+
+# 04-22-2026
+ECMWF_rt  <- rast("ECMWF_0422_rt.grib")
+shape_rt <- st_transform(shape, crs(ECMWF_rt))
+cropped_rt <- crop(ECMWF_rt, shape_rt)
+masked_rt <- mask(cropped_rt, shape_rt)
+
+
+time_rt <- time(masked_rt)
+
+ECMWFrt_df <- as.data.frame(masked_rt, xy = TRUE, na.rm = TRUE)
+names(ECMWFrt_df)
+names(ECMWFrt_df)[-(1:2)] <- as.character(time_rt)
+
+
+rt <- pivot_longer(ECMWFrt_df, cols = -c(x,y), names_to = "forecast_time",
+                   values_to = "temp_K")
+names(rt)[1:2] <- c("longitude","latitude")
+
+rt_check <- rt %>% group_by(forecast_time) %>%
+  summarise(n())
+
+rt_0422 <- rt %>% filter(forecast_time %in% c("2026-04-22"))
+
+
+rt_mean22 <- rt_0422 %>% group_by(longitude, latitude) %>%
+  summarise(temp_K = mean(temp_K))
+
+rt_mean22$temp_C <- rt_mean22$temp_K - 273.15
+
+rt_mean22 <- rt_mean22 %>% dplyr::select(!temp_K)
+
+
+# change back into a raster
+
+rt_ras22 <- rast(rt_mean22)
+plot(rt_ras22)
+
+# 04-23-2026
+ECMWF_rt  <- rast("ECMWF_0423_rt.grib")
+shape_rt <- st_transform(shape, crs(ECMWF_rt))
+cropped_rt <- crop(ECMWF_rt, shape_rt)
+masked_rt <- mask(cropped_rt, shape_rt)
+
+
+time_rt <- time(masked_rt)
+
+ECMWFrt_df <- as.data.frame(masked_rt, xy = TRUE, na.rm = TRUE)
+names(ECMWFrt_df)
+names(ECMWFrt_df)[-(1:2)] <- as.character(time_rt)
+
+
+rt <- pivot_longer(ECMWFrt_df, cols = -c(x,y), names_to = "forecast_time",
+                   values_to = "temp_K")
+names(rt)[1:2] <- c("longitude","latitude")
+
+rt_check <- rt %>% group_by(forecast_time) %>%
+  summarise(n())
+
+rt_0423 <- rt %>% filter(forecast_time %in% c("2026-04-23"))
+
+
+rt_mean23 <- rt_0423 %>% group_by(longitude, latitude) %>%
+  summarise(temp_K = mean(temp_K))
+
+rt_mean23$temp_C <- rt_mean23$temp_K - 273.15
+
+rt_mean23 <- rt_mean23 %>% dplyr::select(!temp_K)
+
+
+# change back into a raster
+
+rt_ras23 <- rast(rt_mean23)
+plot(rt_ras23)
+
+# 04-24-2026
+ECMWF_rt  <- rast("ECMWF_0424_rt.grib")
+shape_rt <- st_transform(shape, crs(ECMWF_rt))
+cropped_rt <- crop(ECMWF_rt, shape_rt)
+masked_rt <- mask(cropped_rt, shape_rt)
+
+
+time_rt <- time(masked_rt)
+
+ECMWFrt_df <- as.data.frame(masked_rt, xy = TRUE, na.rm = TRUE)
+names(ECMWFrt_df)
+names(ECMWFrt_df)[-(1:2)] <- as.character(time_rt)
+
+
+rt <- pivot_longer(ECMWFrt_df, cols = -c(x,y), names_to = "forecast_time",
+                   values_to = "temp_K")
+names(rt)[1:2] <- c("longitude","latitude")
+
+rt_check <- rt %>% group_by(forecast_time) %>%
+  summarise(n())
+
+rt_0424 <- rt %>% filter(forecast_time %in% c("2026-04-24"))
+
+
+rt_mean24 <- rt_0424 %>% group_by(longitude, latitude) %>%
+  summarise(temp_K = mean(temp_K))
+
+rt_mean24$temp_C <- rt_mean24$temp_K - 273.15
+
+rt_mean24 <- rt_mean24 %>% dplyr::select(!temp_K)
+
+
+# change back into a raster
+
+rt_ras24 <- rast(rt_mean24)
+plot(rt_ras24)
+
+# summarizing over the 7 days
+
+rt_df <- rbind.data.frame(rt_mean18, rt_mean19, rt_mean20, rt_mean21, rt_mean22,
+                          rt_mean23, rt_mean24)
+
+rt_mean <- rt_df %>% group_by(longitude, latitude) %>%
+  summarise(temp_C = mean(temp_C))
+
+rt_ras <- rast(rt_mean)
+plot(rt_ras)
+
+
+## ECMWF Hindcast ----
+### perturbed with 10 members
+
+ECMWF_hc<- rast("ECMWF_0418_0424_hc.grib")
+
+shape_hc <- st_transform(shape, crs(ECMWF_hc))
+cropped_hc <- crop(ECMWF_hc, shape_hc)
+masked_hc <- mask(cropped_hc, shape_hc)
+
+years <- 2006:2025
+
+all_dates <- do.call(
+  c,
+  lapply(years, function(y) {
+    dates <- seq(
+      from = as.Date(sprintf("%d-04-18", y)),
+      to   = as.Date(sprintf("%d-04-24", y)),
+      by = "day"
+    )
+    
+    rep(dates, each = 10)
+  })
+)
+
+all_dates
+
+ECMWFhc_df <- as.data.frame(masked_hc, xy = TRUE, na.rm = TRUE)
+names(ECMWFhc_df)
+names(ECMWFhc_df)[-(1:2)] <- as.character(all_dates)
+
+
+hc <- pivot_longer(ECMWFhc_df, cols = -c(x,y), names_to = "forecast_time",
+                   values_to = "temp_K")
+
+names(hc)[1:2] <- c("longitude","latitude")
+
+hc_meanyr <- hc %>% group_by(longitude, latitude, forecast_time) %>%
+  summarise(temp_K = mean(temp_K))
+
+hc_meanyr$temp_C <- hc_meanyr$temp_K - 273.15
+
+hc_mean <- hc_meanyr %>% group_by(longitude, latitude) %>%
+  summarise(temp_C = mean(temp_C))
+
+# turn back into a raster
+
+hc <- rast(hc_mean)
+plot(hc)
+
+
+## ECMWF anomaly ----
+
+ECMWF_anomaly <- rt_ras - hc
+plot(ECMWF_anomaly)
+
+
+## Climatology data ----
+### using NOAA OT SST V2 Hight Resolution data
+### 17 years of data from Jan 01, 2007 to December 31,2024
+library(ncdf4)
+nc <- nc_open("noaa_sst_0724.nc")
+
+print(nc)
+
+# getting rasters for every day from 2007 - 2024 for the full area
+
+nc_data <- rast("noaa_sst_0724.nc")
+plot(nc_data)
+
+# Get coordinates
+coords <- xyFromCell(nc_data, 1:ncell(nc_data))
+
+# Identify and shift longitudes > 180
+coords[,1] <- ifelse(coords[,1] > 180, coords[,1] - 360, coords[,1])
+
+# Create a new raster with shifted longitudes
+shifted_nc <- nc_data
+ext(shifted_nc) <- c(min(coords[,1]), max(coords[,1]), ext(nc_data)[3], ext(nc_data)[4])
+
+# crop the area of climatology rasters
+shape_SST <- st_transform(shape, crs(shifted_nc))
+cropped_SST <- crop(shifted_nc, shape_SST)
+masked_SST <- mask(cropped_SST, shape_SST)
+
+time_SST <- time(masked_SST)
+
+# down scale it to 0.2x0.2 instead of 0.25x0.25
+SST_scale <- resample(masked_SST, ECMWF_anomaly, method = "bilinear")
+plot(SST_scale)
+
+# create a data frame in order to eventually average over years
+SST_df <- as.data.frame(SST_scale, xy = TRUE, na.rm = TRUE)
+names(SST_df)
+names(SST_df)[-(1:2)] <- as.character(time_SST)
+
+
+SST <- pivot_longer(SST_df, cols = -c(x,y), names_to = "forecast_time",
+                    values_to = "temp_C")
+names(SST)[1:2] <- c("longitude","latitude")
+
+# separating the date column
+SST$forecast_time = as.Date(SST$forecast_time)
+
+SST <- SST %>% mutate(year = year(forecast_time), month = month(forecast_time),
+                      day = day(forecast_time))
+
+# average the temperatures across the 17 years for each day of the year
+SST_mean <- SST %>% group_by(longitude, latitude, month, day) %>%
+  summarise(temp_C = mean(temp_C)) %>%
+  ungroup()
+
+
+SST_check <- SST_mean %>% group_by(month, day) %>%
+  summarise(n())
+
+
+SST_apr <- subset(SST_mean, month == 4)
+
+SST_0418_0424 <- SST_apr %>% filter(day %in% c(18:24))
+
+
+SST_0418 <- SST_0418_0424 %>% group_by(longitude, latitude) %>%
+  summarise(temp_C = mean(temp_C))
+
+# turn back into a raster
+
+sst <- rast(SST_0418)
+plot(sst)
+
+# Corrected SST ----
+
+SST_correct <- ECMWF_anomaly + sst
+
+plot(SST_correct)
+
+### getting the ensemble mean and cropping to study area
+
+# adding column names and adding julian/date
+ECMWF_df <- as.data.frame(SST_correct$temp_C, xy = TRUE, na.rm = TRUE)
+names(ECMWF_df)
+names(ECMWF_df)[-(1:2)] <- "SURFTEMP"
+
+names(ECMWF_df)[1:2] <- c("LON","LAT")
+
+library(lubridate)
+
+ECMWF_df$date <- as.Date("2026-04-18")
+
+ECMWF_df$julian_day <- yday(ECMWF_df$date)
+
+
+# adding depth, region, slope, and curvature from rasters
+w2 <- matrix(1,5,5)
+logdepth <- focal(depth_ras, w2, mean, na.rm=TRUE, NAonly=TRUE, pad=TRUE)
+
+regiontest <- focal(region_ras, w2, min, na.rm=TRUE, NAonly=TRUE, pad=TRUE)
+test <- as.data.frame(regiontest, xy=TRUE)
+unique(test$layer) #currently no decimal values; just 1-4
+test <- test %>% 
+  filter(layer!="Inf")
+unique(test$layer)
+regtest <- rasterFromXYZ(test)
+
+slope1 <- projectRaster(slope1, crs = proj4string(disttobays))
+curvature1 <- projectRaster(curvature, crs = proj4string(disttobays))
+ex = extent(disttobays)
+ex2 = extent(curvature)
+curvature2 = crop(curvature1, ex) #now crop it to match disttobays extent
+slope2 = crop(slope1, ex)
+
+area <- shapefile("River_Herring_and_Shad_Catch_Cap_Areas.shp")
+r <- raster(extent(area))        
+res(r) <- 0.2              
+crs(r) <- crs(area) 
+
+area$AREAGROUP_num <- as.numeric(factor(area$AREANAME))
+area1 <- rasterize(area, r, field = "AREAGROUP_num")
+area2 <- crop(area1, ex)
+plot(area2)
+
+coordinates(ECMWF_df) <- ~ LON + LAT
+
+#Specify the coordinate reference system (CRS, i.e., the projection)
+proj4string(ECMWF_df) <- CRS("+init=epsg:4326") #4326 represents lat/long on the WGS84 spheroid
+str(ECMWF_df)
+test <- raster::extract(disttobays, ECMWF_df, sp=T, df=T)
+test2 <- raster::extract(curvature2, test, sp=T, df=T)
+test3 <- raster::extract(slope2, test2, sp=T, df=T)
+test4 <- raster::extract(regiontest, test3, sp = T, df = T)
+test5 <- raster::extract(area2, test4, sp = T, df = T)
+s2s_df <- as.data.frame(test5)
+colnames(s2s_df)[4]<- "disttobays"
+colnames(s2s_df)[5]<- "curvature"
+colnames(s2s_df)[6]<- "slope"
+colnames(s2s_df)[7]<- "region"
+colnames(s2s_df)[8]<- "area"
+colnames(s2s_df)[9] <- "LON"
+colnames(s2s_df)[10]<- "LAT"
+
+## AM ----
+
+pred_AM <- predict(AM_gam_all, s2s_df, type = "link", se.fit = TRUE)
+
+s2s_df$pred_AM <- AM_gam_all$family$linkinv(pred_AM$fit)
+s2s_df$se_AM <- AM_gam_all$family$linkinv(pred_AM$se.fit)
+
+quantile(s2s_df$pred_AM)
+
+s2s_AM <- s2s_df %>% dplyr::select(LON, LAT, pred_AM)
+
+s2s_AM_ras <- rast(s2s_AM)
+
+plot(s2s_AM_ras)
+
+crs(s2s_AM_ras) <- "EPSG:4326"
+
+r_proj <- project(s2s_AM_ras, "EPSG:32619")  # Replace with your UTM zone
+
+# Define grid cell size
+# grid_size <- 40000  # in meters (5 km x 5 km)
+
+res_lon <- 10/60
+res_lat <- 5/60
+
+# km_per_deg_lat <- 111.32
+# cell_height_km <- res_lat * km_per_deg_lat
+# 
+# cell_width_km <- res_lon * 111.32 * cos(lat * pi / 180)
+
+
+ext <- ext(s2s_AM_ras)
+
+grid_template <- rast(ext, resolution = c(res_lon, res_lat))
+values(grid_template) <- 1:ncell(grid_template)
+
+grid_poly_AM <- as.polygons(grid_template)
+
+summary_df_AM <- terra::extract(s2s_AM_ras, grid_poly_AM, fun = mean, na.rm = TRUE)
+
+grid_poly_AM$mean_val <- summary_df_AM[,2]
+
+plot(grid_poly_AM, "mean_val")
+
+
+grid_sf <- sf::st_as_sf(grid_poly_AM)
+
+quantile(na.omit(grid_sf$mean_val))
+
+library(ggpattern)
+library(rnaturalearth)
+
+states <- ne_states(country = "United States of America", returnclass = "sf")
+
+states <- st_transform(states, st_crs(grid_sf))
+
+plot(states)
+
+grid_bbox <- st_as_sfc(st_bbox(grid_sf))
+
+states_clipped <- st_intersection(states, grid_bbox)
+
+# restrict <- st_read("HerringInshoreMidwaterTrawlRestrictedArea.shp")
+# restrict <- st_transform(restrict, st_crs(grid_sf))
+# restrict_clip <- st_intersection(restrict, grid_bbox)
+
+area <- st_read("River_Herring_and_Shad_Catch_Cap_Areas.shp")
+area1 <- st_transform(area, st_crs(grid_sf))
+area_clip <- st_intersection(area1, grid_bbox)
+plot(area_clip)
+
+
+
+library(ggspatial)
+
+AM1 <- ggplot() +
+  geom_sf(data = grid_sf, aes(fill = mean_val)) +
+  scale_fill_scico(palette = "roma",
+                   na.value = "transparent",
+                   limits = c(0,1)) +
+  geom_sf(data = states_clipped, fill = "lightgray", color = "black", size = 0.3) +
+  #geom_sf(data = restrict, fill = "red") +
+  #geom_sf(data = area_clip, fill = NA, color = "black", linewidth = 1) +
+  theme_classic() +
+  coord_sf(crs = 32619) +
+  labs(fill = "Encountering Probability", color = "Presence") +
+  ggtitle("Atlantic Mackerel") +
+  theme(legend.position = "none") +
+  annotation_north_arrow(location = "tl",
+                         which_north = "true",
+                         style = north_arrow_fancy_orienteering) +
+  annotation_scale(location = "br",
+                   bar_cols = c("black", "white"))
+
+
+
+
+
+library(leaflet)
+
+grid_sf_ll      <- st_transform(grid_sf, 4326)
+states_clipped_ll <- st_transform(states_clipped, 4326)
+#restrict_ll     <- st_transform(restrict, 4326)
+area_clip_ll    <- st_transform(area_clip, 4326)
+
+
+library(sf)
+library(rnaturalearth)
+
+sf_use_s2(FALSE)
+
+us_land <- ne_countries(
+  country = "United States of America",
+  scale = "large",
+  returnclass = "sf"
+) %>%
+  st_transform(4326)
+
+us_boundary <- us_land %>%
+  st_union() %>%
+  st_boundary() %>%
+  st_cast("MULTILINESTRING")
+
+ocean <- ne_download(
+  scale = "large",
+  type = "ocean",
+  category = "physical",
+  returnclass = "sf"
+) %>%
+  st_transform(4326)
+
+coastline_only <- st_intersection(us_boundary, ocean)
+
+sf_use_s2(TRUE)
+
+atlantic_bbox <- st_as_sfc(st_bbox(c(
+  xmin = -82,
+  xmax = -60,
+  ymin = 34,
+  ymax = 45
+), crs = st_crs(4326)))
+
+atlantic_coast <- st_intersection(coastline_only, atlantic_bbox) %>%
+  st_simplify(dTolerance = 0.001, preserveTopology = TRUE)
+
+atlantic_coast <- atlantic_coast %>%
+  st_collection_extract("LINESTRING") %>%
+  st_cast("MULTILINESTRING")
+
+
+# subtract land from each polygon
+grid_water <- st_difference(grid_sf_ll, st_union(us_land))
+
+pal <- colorNumeric(
+  palette = scico(100, palette = "roma"),
+  domain = c(0, 1),
+  na.color = "transparent"
+)
+
+
+
+AM_plot <- leaflet() %>%
+  addProviderTiles("CartoDB.Positron") %>%
+  onRender("
+    function(el, x) {
+      var map = this;
+      map.on('click', function(e) {
+        L.popup()
+          .setLatLng(e.latlng)
+          .setContent(
+            'Latitude: ' + e.latlng.lat.toFixed(5) +
+            '<br>Longitude: ' + e.latlng.lng.toFixed(5)
+          )
+          .openOn(map);
+      });
+    }
+  ") %>%
+  
+  # grid_sf polygons
+  addPolygons(
+    data = grid_water,
+    fillColor = ~pal(mean_val),
+    fillOpacity = 0.9,
+    weight = 0.1,
+    color = "black",
+    opacity = 0.5,
+    popup = ~paste("Encountering probability:", round(mean_val, 3))
+  ) %>%
+  
+  # restriction area (red)
+  # addPolygons(
+  #   data = restrict_ll,
+  #   fillColor = "red",
+  #   color = "black",
+  #   weight = 1,
+  #   fillOpacity = 0.7
+  # ) %>%
+  
+  # # area_clip outline (thick black)
+  # addPolylines(
+  #   data = area_clip_ll,
+  #   color = "black",
+  #   weight = 3
+  # ) %>%
+  
+  addLegend(
+    pal = pal,
+    values = grid_sf_ll$mean_val,
+    title = htmltools::HTML("Encountering<br>Probability")
+  ) %>%
+  
+  addScaleBar(
+    position = "bottomright",
+    options = scaleBarOptions(
+      maxWidth = 350,  # length of scale bar in pixels
+      metric = TRUE,
+      imperial = FALSE,
+      updateWhenIdle = TRUE
+    ) 
+  ) %>%
+  onRender("
+  function(el, x) {
+    var map = this;
+
+    /* ===============================
+       HOVER COORDINATES (bottom-left)
+       =============================== */
+    var coords = L.control({position: 'bottomleft'});
+    coords.onAdd = function () {
+      this._div = L.DomUtil.create('div', 'leaflet-control');
+      this._div.style.background = 'rgba(255,255,255,0.8)';
+      this._div.style.padding = '5px';
+      this._div.innerHTML = 'Lat: –, Lon: –';
+      return this._div;
+    };
+    coords.addTo(map);
+
+    map.on('mousemove', function(e) {
+      coords._div.innerHTML =
+        'Lat: ' + e.latlng.lat.toFixed(4) +
+        '<br>Lon: ' + e.latlng.lng.toFixed(4);
+    });
+
+    /* ===============================
+       CENTERED TITLE (top, above zoom)
+       =============================== */
+    var titleDiv = L.DomUtil.create('div', 'map-title');
+
+    titleDiv.innerHTML = `
+      <div style=\"
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255,255,255,0.9);
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #0b2d49;
+        text-align: center;
+        white-space: nowrap;
+        z-index: 1000;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+        pointer-events: none;
+      \">
+        Atlantic Mackerel
+      </div>
+    `;
+
+    map.getContainer().appendChild(titleDiv);
+  }
+") %>%
+  addPolylines(
+    data = atlantic_coast,
+    color = "#1a1a1a",
+    weight = 3,
+    opacity = 1,
+    smoothFactor = 1
+  )
+
+
+library(htmlwidgets)
+saveWidget(AM_plot, file = "AM_0418_0424_map.html", selfcontained = TRUE)
+
+
+## AH ----
+
+pred_AH <- predict(AH_gam_all, s2s_df, type = "link", se.fit = TRUE)
+
+s2s_df$pred_AH <- AH_gam_all$family$linkinv(pred_AH$fit)
+s2s_df$se_AH <- AH_gam_all$family$linkinv(pred_AH$se.fit)
+
+quantile(s2s_df$pred_AH)
+
+s2s_AH <- s2s_df %>% dplyr::select(LON, LAT, pred_AH)
+
+s2s_AH_ras <- rast(s2s_AH)
+
+plot(s2s_AH_ras)
+
+crs(s2s_AH_ras) <- "EPSG:4326"
+
+r_proj <- project(s2s_AH_ras, "EPSG:32619")  # Replace with your UTM zone
+
+# Define grid cell size
+# grid_size <- 40000  # in meters (5 km x 5 km)
+
+res_lon <- 10/60
+res_lat <- 5/60
+
+ext <- ext(s2s_AH_ras)
+
+grid_template <- rast(ext, resolution = c(res_lon, res_lat))
+values(grid_template) <- 1:ncell(grid_template)
+
+grid_poly_AH <- as.polygons(grid_template)
+
+summary_df_AH <- terra::extract(s2s_AH_ras, grid_poly_AH, fun = mean, na.rm = TRUE)
+
+grid_poly_AH$mean_val <- summary_df_AH[,2]
+
+plot(grid_poly_AH, "mean_val")
+
+grid_sf <- sf::st_as_sf(grid_poly_AH)
+
+quantile(na.omit(grid_sf$mean_val))
+
+
+library(ggpattern)
+library(rnaturalearth)
+
+states <- ne_states(country = "United States of America", returnclass = "sf")
+
+states <- st_transform(states, st_crs(grid_sf))
+
+grid_bbox <- st_as_sfc(st_bbox(grid_sf))
+
+states_clipped <- st_intersection(states, grid_bbox)
+
+
+AH_area <- st_read("Herring_Management_Areas.shp")
+AH_area <- st_transform(AH_area, st_crs(grid_sf))
+AHarea_clip <- st_intersection(AH_area, grid_bbox)
+
+# restrict <- st_read("HerringInshoreMidwaterTrawlRestrictedArea.shp")
+# restrict <- st_transform(restrict, st_crs(grid_sf))
+# restrict_clip <- st_intersection(restrict, grid_bbox)
+
+AH1 <- ggplot() +
+  geom_sf(data = grid_sf, aes(fill = mean_val)) +
+  scale_fill_scico(palette = "roma",
+                   na.value = "transparent",
+                   limits = c(0,1)) +
+  geom_sf(data = states_clipped, fill = "lightgray", color = "black", size = 0.3) +
+  #geom_sf(data = restrict, fill = "red") +
+  geom_sf(data = AHarea_clip, fill = NA, color = "black", linewidth = 1) +
+  theme_classic() +
+  coord_sf(crs = 32619) +
+  labs(fill = "Probability", color = "Presence") +
+  ggtitle("Atlantic Herring") +
+  annotation_north_arrow(location = "tl",
+                         which_north = "true",
+                         style = north_arrow_fancy_orienteering) +
+  theme(legend.position = "none") +
+  annotation_scale(location = "br",
+                   bar_cols = c("black", "white"))
+
+library(leaflet)
+
+grid_sf_ll      <- st_transform(grid_sf, 4326)
+states_clipped_ll <- st_transform(states_clipped, 4326)
+#restrict_ll     <- st_transform(restrict, 4326)
+area_clip_ll    <- st_transform(area_clip, 4326)
+AHarea_clip_ll <- st_transform(AHarea_clip, 4326)
+
+library(sf)
+library(rnaturalearth)
+
+sf_use_s2(FALSE)
+
+us_land <- ne_countries(
+  country = "United States of America",
+  scale = "large",
+  returnclass = "sf"
+) %>%
+  st_transform(4326)
+
+us_boundary <- us_land %>%
+  st_union() %>%
+  st_boundary() %>%
+  st_cast("MULTILINESTRING")
+
+ocean <- ne_download(
+  scale = "large",
+  type = "ocean",
+  category = "physical",
+  returnclass = "sf"
+) %>%
+  st_transform(4326)
+
+coastline_only <- st_intersection(us_boundary, ocean)
+
+sf_use_s2(TRUE)
+
+atlantic_bbox <- st_as_sfc(st_bbox(c(
+  xmin = -82,
+  xmax = -60,
+  ymin = 34,
+  ymax = 45
+), crs = st_crs(4326)))
+
+atlantic_coast <- st_intersection(coastline_only, atlantic_bbox) %>%
+  st_simplify(dTolerance = 0.001, preserveTopology = TRUE)
+
+atlantic_coast <- atlantic_coast %>%
+  st_collection_extract("LINESTRING") %>%
+  st_cast("MULTILINESTRING")
+
+
+# subtract land from each polygon
+grid_water <- st_difference(grid_sf_ll, st_union(us_land))
+
+pal <- colorNumeric(
+  palette = scico(100, palette = "roma"),
+  domain = c(0, 1),
+  na.color = "transparent"
+)
+
+
+
+AH_plot <- leaflet() %>%
+  addProviderTiles("CartoDB.Positron") %>%
+  onRender("
+    function(el, x) {
+      var map = this;
+      map.on('click', function(e) {
+        L.popup()
+          .setLatLng(e.latlng)
+          .setContent(
+            'Latitude: ' + e.latlng.lat.toFixed(5) +
+            '<br>Longitude: ' + e.latlng.lng.toFixed(5)
+          )
+          .openOn(map);
+      });
+    }
+  ") %>%
+  
+  # grid_sf polygons
+  addPolygons(
+    data = grid_water,
+    fillColor = ~pal(mean_val),
+    fillOpacity = 0.9,
+    weight = 0.1,
+    color = "black",
+    opacity = 0.5,
+    popup = ~paste("Encountering probability:", round(mean_val, 3))
+  ) %>%
+  
+  # restriction area (red)
+  # addPolygons(
+  #   data = restrict_ll,
+  #   fillColor = "red",
+  #   color = "black",
+  #   weight = 1,
+  #   fillOpacity = 0.7
+  # ) %>%
+  
+  # area_clip outline (thick black)
+  addPolylines(
+    data = AHarea_clip_ll,
+    color = "black",
+    weight = 3
+  ) %>%
+  
+  addLegend(
+    pal = pal,
+    values = grid_sf_ll$mean_val,
+    title = htmltools::HTML("Encountering<br>Probability")
+  ) %>%
+  
+  addScaleBar(
+    position = "bottomright",
+    options = scaleBarOptions(
+      maxWidth = 350,  # length of scale bar in pixels
+      metric = TRUE,
+      imperial = FALSE,
+      updateWhenIdle = TRUE
+    ) 
+  ) %>%
+  onRender("
+  function(el, x) {
+    var map = this;
+
+    /* ===============================
+       HOVER COORDINATES (bottom-left)
+       =============================== */
+    var coords = L.control({position: 'bottomleft'});
+    coords.onAdd = function () {
+      this._div = L.DomUtil.create('div', 'leaflet-control');
+      this._div.style.background = 'rgba(255,255,255,0.8)';
+      this._div.style.padding = '5px';
+      this._div.innerHTML = 'Lat: –, Lon: –';
+      return this._div;
+    };
+    coords.addTo(map);
+
+    map.on('mousemove', function(e) {
+      coords._div.innerHTML =
+        'Lat: ' + e.latlng.lat.toFixed(4) +
+        '<br>Lon: ' + e.latlng.lng.toFixed(4);
+    });
+
+    /* ===============================
+       CENTERED TITLE (top, above zoom)
+       =============================== */
+    var titleDiv = L.DomUtil.create('div', 'map-title');
+
+    titleDiv.innerHTML = `
+      <div style=\"
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255,255,255,0.9);
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #0b2d49;
+        text-align: center;
+        white-space: nowrap;
+        z-index: 1000;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+        pointer-events: none;
+      \">
+        Atlantic Herring
+      </div>
+    `;
+
+    map.getContainer().appendChild(titleDiv);
+  }
+")%>%
+  addPolylines(
+    data = atlantic_coast,
+    color = "#1a1a1a",
+    weight = 3,
+    opacity = 1,
+    smoothFactor = 1
+  )
+
+
+
+library(htmlwidgets)
+saveWidget(AH_plot, file = "AH_0418_0424_map.html", selfcontained = TRUE)
+
+
+## RH ---- 
+
+
+pred_RH <- predict(RH_gam_all, s2s_df, type = "link", se.fit = TRUE)
+
+s2s_df$pred_RH <- RH_gam_all$family$linkinv(pred_RH$fit)
+s2s_df$se_RH <- RH_gam_all$family$linkinv(pred_RH$se.fit)
+
+quantile(s2s_df$pred_RH)
+
+s2s_RH <- s2s_df %>% dplyr::select(LON, LAT, pred_RH)
+
+s2s_RH_ras <- rast(s2s_RH)
+
+plot(s2s_RH_ras)
+
+crs(s2s_RH_ras) <- "EPSG:4326"
+
+r_proj <- project(s2s_RH_ras, "EPSG:32619")  # Replace with your UTM zone
+
+# Define grid cell size
+# grid_size <- 40000  # in meters (5 km x 5 km)
+
+res_lon <- 10/60
+res_lat <- 5/60
+
+ext <- ext(s2s_RH_ras)
+
+grid_template <- rast(ext, resolution = c(res_lon, res_lat))
+values(grid_template) <- 1:ncell(grid_template)
+
+grid_poly_RH <- as.polygons(grid_template)
+
+summary_df_RH <- terra::extract(s2s_RH_ras, grid_poly_RH, fun = mean, na.rm = TRUE)
+
+grid_poly_RH$mean_val <- summary_df_RH[,2]
+
+plot(grid_poly_RH, "mean_val")
+
+grid_sf <- sf::st_as_sf(grid_poly_RH)
+
+quantile(na.omit(grid_sf$mean_val))
+
+
+library(ggpattern)
+library(rnaturalearth)
+
+states <- ne_states(country = "United States of America", returnclass = "sf")
+
+states <- st_transform(states, st_crs(grid_sf))
+
+grid_bbox <- st_as_sfc(st_bbox(grid_sf))
+
+states_clipped <- st_intersection(states, grid_bbox)
+
+
+# restrict <- st_read("HerringInshoreMidwaterTrawlRestrictedArea.shp")
+# restrict <- st_transform(restrict, st_crs(grid_sf))
+# restrict_clip <- st_intersection(restrict, grid_bbox)
+
+RH1 <- ggplot() +
+  geom_sf(data = grid_sf, aes(fill = mean_val)) +
+  scale_fill_scico(palette = "roma",
+                   na.value = "transparent",
+                   limits = c(0,1)) +
+  geom_sf(data = states_clipped, fill = "lightgray", color = "black", size = 0.3) +
+  #geom_sf(data = restrict, fill = "red") +
+  #geom_sf(data = area_clip, fill = NA, color = "black", linewidth = 1) +
+  theme_classic() +
+  coord_sf(crs = 32619) +
+  labs(fill = "Probability", color = "Presence") +
+  ggtitle("River Herring") +
+  annotation_north_arrow(location = "tl",
+                         which_north = "true",
+                         style = north_arrow_fancy_orienteering) +
+  theme(legend.position = "none") +
+  annotation_scale(location = "br",
+                   bar_cols = c("black", "white"))
+
+library(leaflet)
+
+grid_sf_ll      <- st_transform(grid_sf, 4326)
+states_clipped_ll <- st_transform(states_clipped, 4326)
+#restrict_ll     <- st_transform(restrict, 4326)
+area_clip_ll    <- st_transform(area_clip, 4326)
+
+library(sf)
+library(rnaturalearth)
+
+sf_use_s2(FALSE)
+
+us_land <- ne_countries(
+  country = "United States of America",
+  scale = "large",
+  returnclass = "sf"
+) %>%
+  st_transform(4326)
+
+us_boundary <- us_land %>%
+  st_union() %>%
+  st_boundary() %>%
+  st_cast("MULTILINESTRING")
+
+ocean <- ne_download(
+  scale = "large",
+  type = "ocean",
+  category = "physical",
+  returnclass = "sf"
+) %>%
+  st_transform(4326)
+
+coastline_only <- st_intersection(us_boundary, ocean)
+
+sf_use_s2(TRUE)
+
+atlantic_bbox <- st_as_sfc(st_bbox(c(
+  xmin = -82,
+  xmax = -60,
+  ymin = 34,
+  ymax = 45
+), crs = st_crs(4326)))
+
+atlantic_coast <- st_intersection(coastline_only, atlantic_bbox) %>%
+  st_simplify(dTolerance = 0.001, preserveTopology = TRUE)
+
+atlantic_coast <- atlantic_coast %>%
+  st_collection_extract("LINESTRING") %>%
+  st_cast("MULTILINESTRING")
+
+
+# subtract land from each polygon
+grid_water <- st_difference(grid_sf_ll, st_union(us_land))
+
+pal <- colorNumeric(
+  palette = scico(100, palette = "roma"),
+  domain = c(0, 1),
+  na.color = "transparent"
+)
+
+
+
+RH_plot <- leaflet() %>%
+  addProviderTiles("CartoDB.Positron") %>%
+  onRender("
+    function(el, x) {
+      var map = this;
+      map.on('click', function(e) {
+        L.popup()
+          .setLatLng(e.latlng)
+          .setContent(
+            'Latitude: ' + e.latlng.lat.toFixed(5) +
+            '<br>Longitude: ' + e.latlng.lng.toFixed(5)
+          )
+          .openOn(map);
+      });
+    }
+  ") %>%
+  
+  # grid_sf polygons
+  addPolygons(
+    data = grid_water,
+    fillColor = ~pal(mean_val),
+    fillOpacity = 0.9,
+    weight = 0.1,
+    color = "black",
+    opacity = 0.5,
+    popup = ~paste("Encountering probability:", round(mean_val, 3))
+  ) %>%
+  
+  # restriction area (red)
+  # addPolygons(
+  #   data = restrict_ll,
+  #   fillColor = "red",
+  #   color = "black",
+  #   weight = 1,
+  #   fillOpacity = 0.7
+  # ) %>%
+  
+  # # area_clip outline (thick black)
+  # addPolylines(
+  #   data = area_clip_ll,
+  #   color = "black",
+  #   weight = 3
+  # ) %>%
+  
+  addLegend(
+    pal = pal,
+    values = grid_sf_ll$mean_val,
+    title = htmltools::HTML("Encountering<br>Probability")
+  ) %>%
+  
+  addScaleBar(
+    position = "bottomright",
+    options = scaleBarOptions(
+      maxWidth = 350,  # length of scale bar in pixels
+      metric = TRUE,
+      imperial = FALSE,
+      updateWhenIdle = TRUE
+    ) 
+  )  %>%
+  onRender("
+  function(el, x) {
+    var map = this;
+
+    /* ===============================
+       HOVER COORDINATES (bottom-left)
+       =============================== */
+    var coords = L.control({position: 'bottomleft'});
+    coords.onAdd = function () {
+      this._div = L.DomUtil.create('div', 'leaflet-control');
+      this._div.style.background = 'rgba(255,255,255,0.8)';
+      this._div.style.padding = '5px';
+      this._div.innerHTML = 'Lat: –, Lon: –';
+      return this._div;
+    };
+    coords.addTo(map);
+
+    map.on('mousemove', function(e) {
+      coords._div.innerHTML =
+        'Lat: ' + e.latlng.lat.toFixed(4) +
+        '<br>Lon: ' + e.latlng.lng.toFixed(4);
+    });
+
+    /* ===============================
+       CENTERED TITLE (top, above zoom)
+       =============================== */
+    var titleDiv = L.DomUtil.create('div', 'map-title');
+
+    titleDiv.innerHTML = `
+      <div style=\"
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255,255,255,0.9);
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #0b2d49;
+        text-align: center;
+        white-space: nowrap;
+        z-index: 1000;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+        pointer-events: none;
+      \">
+        River Herring
+      </div>
+    `;
+
+    map.getContainer().appendChild(titleDiv);
+  }
+")%>%
+  addPolylines(
+    data = atlantic_coast,
+    color = "#1a1a1a",
+    weight = 3,
+    opacity = 1,
+    smoothFactor = 1
+  )
+
+
+
+library(htmlwidgets)
+saveWidget(RH_plot, file = "RH_0418_0424_map.html", selfcontained = TRUE)
+
+
+
+## AH & RH ratio ----
+
+poly_AH_RH <- merge(grid_poly_AH, grid_poly_RH, by = "lyr.1")
+# poly_AH_RH$mean_val.x <- round(poly_AH_RH$mean_val.x,3) + 0.001
+# poly_AH_RH$mean_val.y <- round(poly_AH_RH$mean_val.y,3) + 0.001
+# 
+# 
+# poly_AH_RH$ratio <- poly_AH_RH$mean_val.x/poly_AH_RH$mean_val.y
+
+poly_AH_RH$joint_likelihood <- poly_AH_RH$mean_val.x * (1 - poly_AH_RH$mean_val.y)
+
+
+plot(poly_AH_RH, "joint_likelihood")
+
+AHRH_poly <- st_as_sf(poly_AH_RH)
+
+AHRH1 <- ggplot(AHRH_poly) +
+  geom_sf(aes(fill = joint_likelihood)) +
+  scale_fill_scico(palette = "roma",
+                   na.value = "transparent",
+                   limits = c(0,1)) +
+  geom_sf(data = states_clipped, fill = "lightgray", color = "black", size = 0.3) +
+  geom_sf(data = AHarea_clip, fill = NA, color = "black", linewidth = 1) +
+  theme_classic() +
+  labs(fill = "Probability", color = "Presence") +
+  ggtitle("April 18, 2026 to April 24, 2026: Atlantic Herring * (1-River Herring)") +
+  coord_sf(crs = 32619) +
+  annotation_north_arrow(location = "tl",
+                         which_north = "true",
+                         style = north_arrow_fancy_orienteering) +
+  annotation_scale(location = "br",
+                   bar_cols = c("black", "white"))
+
+library(leaflet)
+
+grid_sf_ll      <- st_transform(AHRH_poly, 4326)
+states_clipped_ll <- st_transform(states_clipped, 4326)
+#restrict_ll     <- st_transform(restrict, 4326)
+area_clip_ll    <- st_transform(AHarea_clip, 4326)
+
+library(sf)
+library(rnaturalearth)
+
+sf_use_s2(FALSE)
+
+us_land <- ne_countries(
+  country = "United States of America",
+  scale = "large",
+  returnclass = "sf"
+) %>%
+  st_transform(4326)
+
+us_boundary <- us_land %>%
+  st_union() %>%
+  st_boundary() %>%
+  st_cast("MULTILINESTRING")
+
+ocean <- ne_download(
+  scale = "large",
+  type = "ocean",
+  category = "physical",
+  returnclass = "sf"
+) %>%
+  st_transform(4326)
+
+coastline_only <- st_intersection(us_boundary, ocean)
+
+sf_use_s2(TRUE)
+
+atlantic_bbox <- st_as_sfc(st_bbox(c(
+  xmin = -82,
+  xmax = -60,
+  ymin = 34,
+  ymax = 45
+), crs = st_crs(4326)))
+
+atlantic_coast <- st_intersection(coastline_only, atlantic_bbox) %>%
+  st_simplify(dTolerance = 0.001, preserveTopology = TRUE)
+
+atlantic_coast <- atlantic_coast %>%
+  st_collection_extract("LINESTRING") %>%
+  st_cast("MULTILINESTRING")
+
+
+# subtract land from each polygon
+grid_water <- st_difference(grid_sf_ll, st_union(us_land))
+
+
+
+pal <- colorNumeric(
+  palette = scico(100, palette = "roma"),
+  domain = c(0, 1),
+  na.color = "transparent"
+)
+
+
+AHRH <- leaflet() %>%
+  addProviderTiles("CartoDB.Positron") %>%
+  
+  onRender("
+    function(el, x) {
+      var map = this;
+      map.on('click', function(e) {
+        L.popup()
+          .setLatLng(e.latlng)
+          .setContent(
+            'Latitude: ' + e.latlng.lat.toFixed(5) +
+            '<br>Longitude: ' + e.latlng.lng.toFixed(5)
+          )
+          .openOn(map);
+      });
+    }
+  ") %>%
+  
+  # grid_sf polygons
+  addPolygons(
+    data = grid_water,
+    fillColor = ~pal(joint_likelihood),
+    fillOpacity = 0.9,
+    weight = 0.1,
+    color = "black",
+    opacity = 0.5,
+    popup = ~paste("Encountering Probability:", round(joint_likelihood, 3))
+  ) %>%
+  
+  addPolylines(
+    data = area_clip_ll,
+    color = "black",
+    weight = 3
+  ) %>%
+  
+  # # restriction area (red)
+  # addPolygons(
+  #   data = restrict_ll,
+  #   fillColor = "red",
+  #   color = "black",
+  #   weight = 1,
+  #   fillOpacity = 0.7
+  # ) %>%
+  # 
+  # # area_clip outline (thick black)
+  # addPolylines(
+  #   data = area_clip_ll,
+  #   color = "black",
+  #   weight = 3
+  # ) %>%
+  
+  addLegend(
+    pal = pal,
+    values = grid_sf_ll$joint_likelihood,
+    title = htmltools::HTML("Encountering<br>Probability")
+  ) %>%
+  
+  addScaleBar(
+    position = "bottomright",
+    options = scaleBarOptions(
+      maxWidth = 350,  # length of scale bar in pixels
+      metric = TRUE,
+      imperial = FALSE,
+      updateWhenIdle = TRUE
+    )
+  )  %>%
+  onRender("
+  function(el, x) {
+    var map = this;
+
+    /* ===============================
+       HOVER COORDINATES (bottom-left)
+       =============================== */
+    var coords = L.control({position: 'bottomleft'});
+    coords.onAdd = function () {
+      this._div = L.DomUtil.create('div', 'leaflet-control');
+      this._div.style.background = 'rgba(255,255,255,0.8)';
+      this._div.style.padding = '5px';
+      this._div.innerHTML = 'Lat: –, Lon: –';
+      return this._div;
+    };
+    coords.addTo(map);
+
+    map.on('mousemove', function(e) {
+      coords._div.innerHTML =
+        'Lat: ' + e.latlng.lat.toFixed(4) +
+        '<br>Lon: ' + e.latlng.lng.toFixed(4);
+    });
+
+    /* ===============================
+       CENTERED TITLE (top, above zoom)
+       =============================== */
+    var titleDiv = L.DomUtil.create('div', 'map-title');
+
+    titleDiv.innerHTML = `
+      <div style=\"
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255,255,255,0.9);
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #0b2d49;
+        text-align: center;
+        white-space: nowrap;
+        z-index: 1000;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+        pointer-events: none;
+      \">
+        Forecast to maximize Atlantic herring encounters <br>
+        while minimizing river herring encounters
+      </div>
+    `;
+
+    map.getContainer().appendChild(titleDiv);
+  }
+")%>%
+  
+  addPolylines(
+    data = atlantic_coast,
+    color = "#1a1a1a",
+    weight = 3,
+    opacity = 1,
+    smoothFactor = 1
+  )
+
+
+library(htmlwidgets)
+saveWidget(AHRH, file = "AHRH_0418_0424_map.html", selfcontained = TRUE)
+
+
+
+## AM & RH ratio ----
+
+poly_AM_RH <- merge(grid_poly_AM, grid_poly_RH, by = "lyr.1")
+
+poly_AM_RH$joint_likelihood <- poly_AM_RH$mean_val.x * (1 - poly_AM_RH$mean_val.y)
+
+
+plot(poly_AM_RH, "joint_likelihood")
+
+AMRH_poly <- st_as_sf(poly_AM_RH)
+
+AMRH1 <- ggplot(AMRH_poly) +
+  geom_sf(aes(fill = joint_likelihood)) +
+  scale_fill_scico(palette = "roma",
+                   na.value = "transparent",
+                   limits = c(0,1)) +
+  geom_sf(data = states_clipped, fill = "lightgray", color = "black", size = 0.3) +
+  #geom_sf(data = area_clip, fill = NA, color = "black", linewidth = 1) +
+  theme_classic() +
+  labs(fill = "Probability", color = "Presence") +
+  ggtitle("April 18, 2026 to April 24, 2026: Atlantic Mackerel * (1-River Herring)") +
+  coord_sf(crs = 32619) +
+  annotation_north_arrow(location = "tl",
+                         which_north = "true",
+                         style = north_arrow_fancy_orienteering) +
+  annotation_scale(location = "br",
+                   bar_cols = c("black", "white"))
+
+grid_sf_ll      <- st_transform(AMRH_poly, 4326)
+states_clipped_ll <- st_transform(states_clipped, 4326)
+#restrict_ll     <- st_transform(restrict, 4326)
+area_clip_ll    <- st_transform(area_clip, 4326)
+
+sf_use_s2(FALSE)
+
+us_land <- ne_countries(
+  country = "United States of America",
+  scale = "large",
+  returnclass = "sf"
+) %>%
+  st_transform(4326)
+
+us_boundary <- us_land %>%
+  st_union() %>%
+  st_boundary() %>%
+  st_cast("MULTILINESTRING")
+
+ocean <- ne_download(
+  scale = "large",
+  type = "ocean",
+  category = "physical",
+  returnclass = "sf"
+) %>%
+  st_transform(4326)
+
+coastline_only <- st_intersection(us_boundary, ocean)
+
+sf_use_s2(TRUE)
+
+atlantic_bbox <- st_as_sfc(st_bbox(c(
+  xmin = -82,
+  xmax = -60,
+  ymin = 34,
+  ymax = 45
+), crs = st_crs(4326)))
+
+atlantic_coast <- st_intersection(coastline_only, atlantic_bbox) %>%
+  st_simplify(dTolerance = 0.001, preserveTopology = TRUE)
+
+atlantic_coast <- atlantic_coast %>%
+  st_collection_extract("LINESTRING") %>%
+  st_cast("MULTILINESTRING")
+
+
+# subtract land from each polygon
+grid_water <- st_difference(grid_sf_ll, st_union(us_land))
+
+
+
+pal <- colorNumeric(
+  palette = scico(100, palette = "roma"),
+  domain = c(0, 1),
+  na.color = "transparent"
+)
+
+
+AMRH <- leaflet() %>%
+  addProviderTiles("CartoDB.Positron") %>%
+  
+  onRender("
+    function(el, x) {
+      var map = this;
+      map.on('click', function(e) {
+        L.popup()
+          .setLatLng(e.latlng)
+          .setContent(
+            'Latitude: ' + e.latlng.lat.toFixed(5) +
+            '<br>Longitude: ' + e.latlng.lng.toFixed(5)
+          )
+          .openOn(map);
+      });
+    }
+  ") %>%
+  
+  # grid_sf polygons
+  addPolygons(
+    data = grid_water,
+    fillColor = ~pal(joint_likelihood),
+    fillOpacity = 0.9,
+    weight = 0.1,
+    color = "black",
+    opacity = 0.5,
+    popup = ~paste("Encountering Probability:", round(joint_likelihood, 3))
+  ) %>%
+  
+  # # restriction area (red)
+  # addPolygons(
+  #   data = restrict_ll,
+  #   fillColor = "red",
+  #   color = "black",
+  #   weight = 1,
+  #   fillOpacity = 0.7
+  # ) %>%
+  # 
+  # # area_clip outline (thick black)
+  # addPolylines(
+  #   data = area_clip_ll,
+  #   color = "black",
+  #   weight = 3
+  # ) %>%
+  
+  addLegend(
+    pal = pal,
+    values = grid_sf_ll$joint_likelihood,
+    title = htmltools::HTML("Encountering<br>Probability")
+  ) %>%
+  
+  addScaleBar(
+    position = "bottomright",
+    options = scaleBarOptions(
+      maxWidth = 350,  # length of scale bar in pixels
+      metric = TRUE,
+      imperial = FALSE,
+      updateWhenIdle = TRUE
+    )
+  )  %>%
+  onRender("
+  function(el, x) {
+    var map = this;
+
+    /* ===============================
+       HOVER COORDINATES (bottom-left)
+       =============================== */
+    var coords = L.control({position: 'bottomleft'});
+    coords.onAdd = function () {
+      this._div = L.DomUtil.create('div', 'leaflet-control');
+      this._div.style.background = 'rgba(255,255,255,0.8)';
+      this._div.style.padding = '5px';
+      this._div.innerHTML = 'Lat: –, Lon: –';
+      return this._div;
+    };
+    coords.addTo(map);
+
+    map.on('mousemove', function(e) {
+      coords._div.innerHTML =
+        'Lat: ' + e.latlng.lat.toFixed(4) +
+        '<br>Lon: ' + e.latlng.lng.toFixed(4);
+    });
+
+    /* ===============================
+       CENTERED TITLE (top, above zoom)
+       =============================== */
+    var titleDiv = L.DomUtil.create('div', 'map-title');
+
+    titleDiv.innerHTML = `
+      <div style=\"
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255,255,255,0.9);
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #0b2d49;
+        text-align: center;
+        white-space: nowrap;
+        z-index: 1000;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+        pointer-events: none;
+      \">
+        Forecast to maximize Atlantic mackerel encounters <br>
+        while minimizing river herring encounters
+      </div>
+    `;
+
+    map.getContainer().appendChild(titleDiv);
+  }
+")%>%
+  
+  addPolylines(
+    data = atlantic_coast,
+    color = "#1a1a1a",
+    weight = 3,
+    opacity = 1,
+    smoothFactor = 1
+  )
+
+
+
+library(htmlwidgets)
+saveWidget(AMRH, file = "AMRH_0418_0424_map.html", selfcontained = TRUE)
+
+
+
+# saving pdf of plots ----
+library(patchwork)
+
+pdf("forecast_0418_0424.pdf", width = 8, height = 6)
+
+(RH1 + AH1)
+print(AHRH1)
+(RH1 + AM1)
+print(AMRH1)
+#print(RH1)
+#print(AH1)
+#print(AM1)
+
+dev.off()
+
+
+# Uncertainty ----
+
+## AM ----
+
+pred_AM <- predict(AM_gam_all, s2s_df, type = "link", se.fit = TRUE)
+
+eta <- pred_AM$fit
+se_eta <- pred_AM$se.fit
+
+z <- 1.96
+
+eta_lo <- eta - z * se_eta
+
+eta_hi <- eta +z * se_eta
+
+
+mu    <- AM_gam_all$family$linkinv(eta)
+mu_lo <- AM_gam_all$family$linkinv(eta_lo)
+mu_hi <- AM_gam_all$family$linkinv(eta_hi)
+sd_mu <- (mu_hi - mu_lo)/(2*z)
+cv_mu <- sd_mu/mu
+
+
+
+s2s_df$uncertain_width <- mu_hi - mu_lo
+s2s_df$cv <- cv_mu
+
+s2s_df$cv[mu < 0.05] <- 0.06
+
+s2s_AMcv <- s2s_df %>% dplyr::select(LON, LAT, uncertain_width)
+
+s2s_AM_ras <- rast(s2s_AMcv)
+
+
+plot(s2s_AM_ras)
+
+crs(s2s_AM_ras) <- "EPSG:4326"
+
+r_proj <- project(s2s_AM_ras, "EPSG:32619")  # Replace with your UTM zone
+
+# Define grid cell size
+# grid_size <- 40000  # in meters (5 km x 5 km)
+
+
+res_lon <- 10/60
+res_lat <- 5/60
+
+
+ext <- ext(s2s_AM_ras)
+
+grid_template <- rast(ext, resolution = c(res_lon, res_lat))
+values(grid_template) <- 1:ncell(grid_template)
+
+grid_poly_AM <- as.polygons(grid_template)
+
+summary_df_AM <- terra::extract(s2s_AM_ras, grid_poly_AM, fun = mean, na.rm = TRUE)
+
+grid_poly_AM$mean_val <- summary_df_AM[,2]
+
+plot(grid_poly_AM, "mean_val")
+
+
+grid_sf <- sf::st_as_sf(grid_poly_AM)
+
+quantile(na.omit(grid_sf$mean_val))
+
+grid_bbox <- st_as_sfc(st_bbox(grid_sf))
+
+
+AM1_ci <- ggplot() +
+  geom_sf(data = grid_sf, aes(fill = mean_val)) +
+  scale_fill_scico(palette = "roma",
+                   na.value = "transparent") +
+  #limits = c(0,1)) +
+  geom_sf(data = states_clipped, fill = "lightgray", color = "black", size = 0.3) +
+  #geom_sf(data = AM_area_clip, fill = NA, color = "black", linewidth = 1) +
+  #geom_sf(data = area_clip, fill = NA, color = "lightgray", linewidth = 0.5) +
+  theme_classic() +
+  coord_sf(crs = 32619) +
+  labs(fill = "CI width", color = "Presence") +
+  ggtitle("April 18 - April 24: Atlantic Mackerel") 
+#theme(legend.position = "none") +
+# annotation_north_arrow(location = "tl",
+#                        which_north = "true",
+#                        style = north_arrow_fancy_orienteering) +
+# annotation_scale(location = "br",
+#                  bar_cols = c("black", "white"))
+
+s2s_AMcv <- s2s_df %>% dplyr::select(LON, LAT, cv)
+
+s2s_AM_ras <- rast(s2s_AMcv)
+
+
+plot(s2s_AM_ras)
+
+crs(s2s_AM_ras) <- "EPSG:4326"
+
+r_proj <- project(s2s_AM_ras, "EPSG:32619")  # Replace with your UTM zone
+
+# Define grid cell size
+# grid_size <- 40000  # in meters (5 km x 5 km)
+
+
+res_lon <- 10/60
+res_lat <- 5/60
+
+
+ext <- ext(s2s_AM_ras)
+
+grid_template <- rast(ext, resolution = c(res_lon, res_lat))
+values(grid_template) <- 1:ncell(grid_template)
+
+grid_poly_AM <- as.polygons(grid_template)
+
+summary_df_AM <- terra::extract(s2s_AM_ras, grid_poly_AM, fun = mean, na.rm = TRUE)
+
+grid_poly_AM$mean_val <- summary_df_AM[,2]
+
+plot(grid_poly_AM, "mean_val")
+
+
+grid_sf <- sf::st_as_sf(grid_poly_AM)
+
+quantile(na.omit(grid_sf$mean_val))
+
+grid_bbox <- st_as_sfc(st_bbox(grid_sf))
+
+
+
+
+AM1_cv <- ggplot() +
+  geom_sf(data = grid_sf, aes(fill = mean_val)) +
+  scale_fill_scico(palette = "roma",
+                   na.value = "transparent") +
+  #limits = c(0,1)) +
+  geom_sf(data = states_clipped, fill = "lightgray", color = "black", size = 0.3) +
+  #geom_sf(data = AM_area_clip, fill = NA, color = "black", linewidth = 1) +
+  #geom_sf(data = area_clip, fill = NA, color = "lightgray", linewidth = 0.5) +
+  theme_classic() +
+  coord_sf(crs = 32619) +
+  labs(fill = "CV", color = "Presence") +
+  ggtitle("April 18 - April 24: Atlantic Mackerel") 
+#theme(legend.position = "none") +
+# annotation_north_arrow(location = "tl",
+#                        which_north = "true",
+#                        style = north_arrow_fancy_orienteering) +
+# annotation_scale(location = "br",
+#                  bar_cols = c("black", "white"))
+
+
+## AH ----
+
+pred_AH <- predict(AH_gam_all, s2s_df, type = "link", se.fit = TRUE)
+
+eta <- pred_AH$fit
+se_eta <- pred_AH$se.fit
+
+z <- 1.96
+
+eta_lo <- eta - z * se_eta
+
+eta_hi <- eta +z * se_eta
+
+
+mu    <- AH_gam_all$family$linkinv(eta)
+mu_lo <- AH_gam_all$family$linkinv(eta_lo)
+mu_hi <- AH_gam_all$family$linkinv(eta_hi)
+sd_mu <- (mu_hi - mu_lo)/(2*z)
+cv_mu <- sd_mu/mu
+
+
+
+s2s_df$uncertain_width <- mu_hi - mu_lo
+s2s_df$cv <- cv_mu
+
+s2s_df$cv[mu < 0.05] <- 0.06
+
+s2s_AHcv <- s2s_df %>% dplyr::select(LON, LAT, uncertain_width)
+
+s2s_AH_ras <- rast(s2s_AHcv)
+
+
+plot(s2s_AH_ras)
+
+crs(s2s_AH_ras) <- "EPSG:4326"
+
+r_proj <- project(s2s_AH_ras, "EPSG:32619")  # Replace with your UTM zone
+
+# Define grid cell size
+# grid_size <- 40000  # in meters (5 km x 5 km)
+
+
+res_lon <- 10/60
+res_lat <- 5/60
+
+
+ext <- ext(s2s_AH_ras)
+
+grid_template <- rast(ext, resolution = c(res_lon, res_lat))
+values(grid_template) <- 1:ncell(grid_template)
+
+grid_poly_AH <- as.polygons(grid_template)
+
+summary_df_AH <- terra::extract(s2s_AH_ras, grid_poly_AH, fun = mean, na.rm = TRUE)
+
+grid_poly_AH$mean_val <- summary_df_AH[,2]
+
+plot(grid_poly_AH, "mean_val")
+
+
+grid_sf <- sf::st_as_sf(grid_poly_AH)
+
+quantile(na.omit(grid_sf$mean_val))
+
+grid_bbox <- st_as_sfc(st_bbox(grid_sf))
+
+
+AH1_ci <- ggplot() +
+  geom_sf(data = grid_sf, aes(fill = mean_val)) +
+  scale_fill_scico(palette = "roma",
+                   na.value = "transparent")+
+  #limits = c(0,1)) +
+  geom_sf(data = states_clipped, fill = "lightgray", color = "black", size = 0.3) +
+  theme_classic() +
+  coord_sf(crs = 32619) +
+  labs(fill = "CI width", color = "Presence") +
+  ggtitle("April 18 - April 24: Atlantic Herring") 
+
+s2s_AHcv <- s2s_df %>% dplyr::select(LON, LAT, cv)
+
+s2s_AH_ras <- rast(s2s_AHcv)
+
+
+plot(s2s_AH_ras)
+
+crs(s2s_AH_ras) <- "EPSG:4326"
+
+r_proj <- project(s2s_AH_ras, "EPSG:32619")  # Replace with your UTM zone
+
+# Define grid cell size
+# grid_size <- 40000  # in meters (5 km x 5 km)
+
+
+res_lon <- 10/60
+res_lat <- 5/60
+
+
+ext <- ext(s2s_AH_ras)
+
+grid_template <- rast(ext, resolution = c(res_lon, res_lat))
+values(grid_template) <- 1:ncell(grid_template)
+
+grid_poly_AH <- as.polygons(grid_template)
+
+summary_df_AH <- terra::extract(s2s_AH_ras, grid_poly_AH, fun = mean, na.rm = TRUE)
+
+grid_poly_AH$mean_val <- summary_df_AH[,2]
+
+plot(grid_poly_AH, "mean_val")
+
+
+grid_sf <- sf::st_as_sf(grid_poly_AH)
+
+quantile(na.omit(grid_sf$mean_val))
+
+grid_bbox <- st_as_sfc(st_bbox(grid_sf))
+
+
+AH1_cv <- ggplot() +
+  geom_sf(data = grid_sf, aes(fill = mean_val)) +
+  scale_fill_scico(palette = "roma",
+                   na.value = "transparent")+
+  #limits = c(0,1)) +
+  geom_sf(data = states_clipped, fill = "lightgray", color = "black", size = 0.3) +
+  theme_classic() +
+  coord_sf(crs = 32619) +
+  labs(fill = "CV", color = "Presence") +
+  ggtitle("April 18 - April 24: Atlantic Herring") 
+
+
+## RH ---- 
+
+
+pred_RH <- predict(RH_gam_all, s2s_df, type = "link", se.fit = TRUE)
+
+eta <- pred_RH$fit
+se_eta <- pred_RH$se.fit
+
+z <- 1.96
+
+eta_lo <- eta - z * se_eta
+
+eta_hi <- eta +z * se_eta
+
+
+mu    <- RH_gam_all$family$linkinv(eta)
+mu_lo <- RH_gam_all$family$linkinv(eta_lo)
+mu_hi <- RH_gam_all$family$linkinv(eta_hi)
+sd_mu <- (mu_hi - mu_lo)/(2*z)
+cv_mu <- sd_mu/mu
+
+
+
+s2s_df$uncertain_width <- mu_hi - mu_lo
+s2s_df$cv <- cv_mu
+
+s2s_df$cv[mu < 0.05] <- 0.06
+
+s2s_RHcv <- s2s_df %>% dplyr::select(LON, LAT, uncertain_width)
+
+s2s_RH_ras <- rast(s2s_RHcv)
+
+
+plot(s2s_RH_ras)
+
+crs(s2s_RH_ras) <- "EPSG:4326"
+
+r_proj <- project(s2s_RH_ras, "EPSG:32619")  # Replace with your UTM zone
+
+# Define grid cell size
+# grid_size <- 40000  # in meters (5 km x 5 km)
+
+
+res_lon <- 10/60
+res_lat <- 5/60
+
+
+ext <- ext(s2s_RH_ras)
+
+grid_template <- rast(ext, resolution = c(res_lon, res_lat))
+values(grid_template) <- 1:ncell(grid_template)
+
+grid_poly_RH <- as.polygons(grid_template)
+
+summary_df_RH <- terra::extract(s2s_RH_ras, grid_poly_RH, fun = mean, na.rm = TRUE)
+
+grid_poly_RH$mean_val <- summary_df_RH[,2]
+
+plot(grid_poly_RH, "mean_val")
+
+
+grid_sf <- sf::st_as_sf(grid_poly_RH)
+
+quantile(na.omit(grid_sf$mean_val))
+
+grid_bbox <- st_as_sfc(st_bbox(grid_sf))
+
+
+RH1_ci <- ggplot() +
+  geom_sf(data = grid_sf, aes(fill = mean_val)) +
+  scale_fill_scico(palette = "roma",
+                   na.value = "transparent")+
+  #limits = c(0,1)) +
+  geom_sf(data = states_clipped, fill = "lightgray", color = "black", size = 0.3) +
+  theme_classic() +
+  coord_sf(crs = 32619) +
+  labs(fill = "CI width", color = "Presence") +
+  ggtitle("April 18 - April 24: River Herring") 
+
+s2s_RHcv <- s2s_df %>% dplyr::select(LON, LAT, cv)
+
+s2s_RH_ras <- rast(s2s_RHcv)
+
+
+plot(s2s_RH_ras)
+
+crs(s2s_RH_ras) <- "EPSG:4326"
+
+r_proj <- project(s2s_RH_ras, "EPSG:32619")  # Replace with your UTM zone
+
+# Define grid cell size
+# grid_size <- 40000  # in meters (5 km x 5 km)
+
+
+res_lon <- 10/60
+res_lat <- 5/60
+
+
+ext <- ext(s2s_RH_ras)
+
+grid_template <- rast(ext, resolution = c(res_lon, res_lat))
+values(grid_template) <- 1:ncell(grid_template)
+
+grid_poly_RH <- as.polygons(grid_template)
+
+summary_df_RH <- terra::extract(s2s_RH_ras, grid_poly_RH, fun = mean, na.rm = TRUE)
+
+grid_poly_RH$mean_val <- summary_df_RH[,2]
+
+plot(grid_poly_RH, "mean_val")
+
+
+grid_sf <- sf::st_as_sf(grid_poly_RH)
+
+quantile(na.omit(grid_sf$mean_val))
+
+grid_bbox <- st_as_sfc(st_bbox(grid_sf))
+
+
+RH1_cv <- ggplot() +
+  geom_sf(data = grid_sf, aes(fill = mean_val)) +
+  scale_fill_scico(palette = "roma",
+                   na.value = "transparent")+
+  #limits = c(0,1)) +
+  geom_sf(data = states_clipped, fill = "lightgray", color = "black", size = 0.3) +
+  theme_classic() +
+  coord_sf(crs = 32619) +
+  labs(fill = "CV", color = "Presence") +
+  ggtitle("April 18 - April 24: River Herring") 
+
+# saving pdf of plots ----
+library(patchwork)
+
+pdf("forecast_0418_0424_uncertainty.pdf", width = 8, height = 6)
+
+(AM1_ci + AM1_cv)
+(AH1_ci + AH1_cv)
+(RH1_ci + RH1_cv)
+
+
+dev.off()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
