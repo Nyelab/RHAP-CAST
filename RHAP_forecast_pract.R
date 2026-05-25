@@ -48463,7 +48463,7 @@ AHRH1 <- ggplot(AHRH_poly) +
   geom_sf(data = AHarea_clip, fill = NA, color = "black", linewidth = 1) +
   theme_classic() +
   labs(fill = "Probability", color = "Presence") +
-  ggtitle("May 30, 2026 to June 6, 2026: Atlantic Herring * (1-River Herring)") +
+  ggtitle("May 30, 2026 to June 5, 2026: Atlantic Herring * (1-River Herring)") +
   coord_sf(crs = 32619) +
   annotation_north_arrow(location = "tl",
                          which_north = "true",
@@ -48689,7 +48689,7 @@ AMRH1 <- ggplot(AMRH_poly) +
   #geom_sf(data = area_clip, fill = NA, color = "black", linewidth = 1) +
   theme_classic() +
   labs(fill = "Probability", color = "Presence") +
-  ggtitle("May 30, 2026 to June 6, 2026: Atlantic Mackerel * (1-River Herring)") +
+  ggtitle("May 30, 2026 to June 5, 2026: Atlantic Mackerel * (1-River Herring)") +
   coord_sf(crs = 32619) +
   annotation_north_arrow(location = "tl",
                          which_north = "true",
@@ -49042,7 +49042,7 @@ AM1_cv <- ggplot() +
   theme_classic() +
   coord_sf(crs = 32619) +
   labs(fill = "CV", color = "Presence") +
-  ggtitle("May 30 - June 6: Atlantic Mackerel") 
+  ggtitle("May 30 - June 5: Atlantic Mackerel") 
 #theme(legend.position = "none") +
 # annotation_north_arrow(location = "tl",
 #                        which_north = "true",
@@ -49127,7 +49127,7 @@ AH1_ci <- ggplot() +
   theme_classic() +
   coord_sf(crs = 32619) +
   labs(fill = "CI width", color = "Presence") +
-  ggtitle("May 30 - June 6: Atlantic Herring") 
+  ggtitle("May 30 - June 5: Atlantic Herring") 
 
 s2s_AHcv <- s2s_df %>% dplyr::select(LON, LAT, cv)
 
@@ -49178,7 +49178,7 @@ AH1_cv <- ggplot() +
   theme_classic() +
   coord_sf(crs = 32619) +
   labs(fill = "CV", color = "Presence") +
-  ggtitle("May 30 - June 6: Atlantic Herring") 
+  ggtitle("May 30 - June 5: Atlantic Herring") 
 
 
 ## RH ---- 
@@ -49258,7 +49258,7 @@ RH1_ci <- ggplot() +
   theme_classic() +
   coord_sf(crs = 32619) +
   labs(fill = "CI width", color = "Presence") +
-  ggtitle("May 30 - June 6: River Herring") 
+  ggtitle("May 30 - June 5: River Herring") 
 
 s2s_RHcv <- s2s_df %>% dplyr::select(LON, LAT, cv)
 
@@ -49309,7 +49309,7 @@ RH1_cv <- ggplot() +
   theme_classic() +
   coord_sf(crs = 32619) +
   labs(fill = "CV", color = "Presence") +
-  ggtitle("May 30 - June 6: River Herring") 
+  ggtitle("May 30 - June 5: River Herring") 
 
 # saving pdf of plots ----
 library(patchwork)
