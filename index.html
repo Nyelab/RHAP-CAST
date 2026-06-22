@@ -177,80 +177,39 @@
     <main class="content-section">
         <p class="intro-text">
 
-The River Herring Avoidance Program Forecast (RHAPCAST) forecasts regions to maximize chances of encountering target species (Atlantic herring or Atlantic mackerel), while minimizing chances of encountering river herring bycatch. Forecasts are provided about one week in advance to help you plan. Look for a new forecast each Monday! 
+The River Herring Avoidance Program Forecast (RHAPCAST) maps identify areas to encounter target species (Atlantic herring or Atlantic mackerel) and avoid encountering river herring bycatch. Forecasts are provided about one week in advance to help you plan. Look for a new forecast each Monday! 
 
-The model uses historical presence-absence data from NMFS trawl surveys, historical environmnetal data, and forecasted sea surface temperature data to predict where we expect the relevant species to be distributed.
+The model uses historical presence-absence data from NMFS trawl surveys, historical environmnetal data, and forecasted sea surface temperature data to predict where we expect the relevant species to be distributed a particular week.
         </p>
+	<div class="map-container">
+   	 <div class="preview-row">
+       		 <img src="RHAPCAST_infographic.png"
+            		 alt="Map"
+             		style="width:1200px; max-width:100%; height:auto;">
+    	</div>
+</div>	</a>
 
-<div class="video-container">
-    <iframe
-        src="https://www.youtube.com/embed/HRbPpgLfND8"
-        title="YouTube video"
-        frameborder="0"
-        allowfullscreen>
-    </iframe>
-</div>
-
-        <h2> June 20, 2026 to June 26, 2026 forecast to maximize Atlantic herring encounters while minimizing river herring encounters</h2>
+        <h2> June 27, 2026 to July 3, 2026 forecast to catch Atlantic herring and avoid river herring </h2>
 
 	<main class="content-section">
         <p class="intro-text">
 
-		<strong>The blue areas on the map show places where Atlantic herring are likely to be present and where river herring are predicted to be absent.</strong> The red and brown areas show places where river herring are predicted to be present or where Atlantic herring are predicted to be absent. <strong>We recommend going to the blue areas </strong> to maximize chances of encountering Atlantic herring and minimize risk of encountering river herring bycatch. Click on the map for more information on the exact encounter probability, and spatial coordinates can be found at the bottom left of the map. A grid cell is approximately 130 km<sup>2</sup> (height ~ 9 km and width ~ 14 km). Please refer to state and federal regulations for any restrictions.
+		<strong>The blue areas on the map show places where Atlantic herring are likely to be present and where river herring are predicted to be absent.</strong> The red and brown areas show places where river herring are predicted to be present or where Atlantic herring are predicted to be absent. <strong> We recommend going to the blue areas. </strong> Click on the map for more information on the exact encounter probability, and spatial coordinates can be found at the bottom left of the map. A grid cell is approximately 130 km<sup>2</sup> (height ~ 9 km and width ~ 14 km). Please refer to state and federal regulations for any restrictions.
         </p>
 
-
-        <div class="map-container">
-
-	        <!-- Preview images -->
-    	<div class="preview-row">
-        <img src="AH_static_0620_0626.png" alt="Atlantic Herring">
-        <img src="RH_static_0620_0626.png" alt="River Herring">
     	</div>
 
             <!-- Interactive Map -->
-            <iframe src="AHRH_0620_0626_map.html" title="Forecast Map"></iframe>
+            <iframe src="AHRH_0627_0703_map.html" title="Forecast Map"></iframe>
             <p style="font-size: 0.9em; margin-top: 10px;">
                 (Interactive map — zoom & explore!)
             </p>
 
             <!-- Open Full Map Button -->
-            <a href="AHRH_0620_0626_map.html" target="_blank" class="download-button">
+            <a href="AHRH_0627_0703_map.html" target="_blank" class="download-button">
                 Open Full Map
             </a>
         </div>
-
- 	<h2>June 20, 2026 to June 26, 2026 Forecast to maximize Atlantic mackerel encounters while minimizing river herring encounters</h2>
-
-	<main class="content-section">
-        <p class="intro-text">
-		<strong>The blue areas on the map show places where Atlantic mackerel are likely to be present and where river herring are predicted to be absent.</strong> The red and brown areas show places where river herring are predicted to be present or where Atlantic mackerel are predicted to be absent. <strong> We recommend going to the blue areas </strong> to maximize chances of encountering Atlantic mackerel and minimize risk of encountering river herring bycatch. Click on the map for more information on the exact encounter probability, and spatial coordinates can be found at the bottom left of the map. A grid cell is approximately 130 km<sup>2</sup> (height ~ 9 km and width ~ 14 km). Please refer to state and federal regulations for any restrictions.
-
-        </p>
-
-        <div class="map-container">
-
-	        <!-- Preview images -->
-    	<div class="preview-row">
-        <img src="AM_static_0620_0626.png" alt="Atlantic Mackerel">
-        <img src="RH_static_0620_0626.png" alt="River Herring">
-    	</div>
-
-            <!-- Interactive Map -->
-            <iframe src="AMRH_0620_0626_map.html" title="Forecast Map"></iframe>
-            <p style="font-size: 0.9em; margin-top: 10px;">
-                (Interactive map — zoom & explore!)
-            </p>
-
-            <!-- Open Full Map Button -->
-            <a href="AMRH_0620_0626_map.html" target="_blank" class="download-button">
-                Open Full Map
-            </a>
-        </div>
-
- 
-<h2> Individual maps for each species </h2>
-
 
 <button class="toggle-btn" onclick="toggleMap('rh-map')">
   View River Herring Map
@@ -259,19 +218,17 @@ The model uses historical presence-absence data from NMFS trawl surveys, histori
 <div id="rh-map" style="display:none;">
 
   <p class="intro-text">
-    This map highlights areas with a high probability of encountering river herring.
-    Blue regions indicate higher encounter likelihood, while red and brown regions
-    indicate lower likelihood. 
+    This map highlights where river herring are distributed (blue) and areas where they are absent (brown/red).
   </p>
 
   <div class="map-container">
-    <iframe src="RH_0620_0626_map.html" title="River Herring Encounter Map"></iframe>
+    <iframe src="RH_0627_0703_map.html" title="River Herring Distribution Map"></iframe>
     <p style="font-size: 0.9em; margin-top: 10px;">
       (Interactive map — zoom & explore!)
     </p>
 
-    <a href="RH_0620_0626_map.html" target="_blank" class="download-button">
-      June 20, 2026 to June 26, 2026 River Herring Map
+    <a href="RH_0627_0703_map.html" target="_blank" class="download-button">
+      June 27, 2026 to July 3, 2026 River Herring Map
     </a>
   </div>
 
@@ -285,25 +242,68 @@ The model uses historical presence-absence data from NMFS trawl surveys, histori
 <div id="ah-map" style="display:none;">
 
   <p class="intro-text">
-    This map shows predicted encounter probabilities for Atlantic herring.
-    Blue areas represent higher likelihood of encountering Atlantic herring,
-    while red and brown areas indicate lower likelihood.
+     This map highlights where Atlantic herring are distributed (blue) and areas where they are absent (brown/red).
   </p>
 
   <div class="map-container">
-    <iframe src="AH_0620_0626_map.html" title="Atlantic Herring Encounter Map"></iframe>
+    <iframe src="AH_0627_0703_map.html" title="Atlantic Herring Encounter Map"></iframe>
     <p style="font-size: 0.9em; margin-top: 10px;">
       (Interactive map — zoom & explore!)
     </p>
 
-    <a href="AH_0620_0626_map.html" target="_blank" class="download-button">
-      June 20, 2026 to June 26, 2026 Atlantic Herring Map
+    <a href="AH_0627_0703_map.html" target="_blank" class="download-button">
+      June 27, 2026 to July 3, 2026 Atlantic Herring Map
     </a>
   </div>
 
 </div>
 
+ 	<h2>June 27, 2026 to July 3, 2026 Forecast to catch Atlantic mackerel and avoid river herring </h2>
+
+	<main class="content-section">
+        <p class="intro-text">
+		<strong>The blue areas on the map show places where Atlantic mackerel are likely to be present and where river herring are predicted to be absent.</strong> The red and brown areas show places where river herring are predicted to be present or where Atlantic mackerel are predicted to be absent. <strong> We recommend going to the blue areas. </strong> Click on the map for more information on the exact encounter probability, and spatial coordinates can be found at the bottom left of the map. A grid cell is approximately 130 km<sup>2</sup> (height ~ 9 km and width ~ 14 km). Please refer to state and federal regulations for any restrictions.
+        </p>
+
+
+    	</div>
+
+            <!-- Interactive Map -->
+            <iframe src="AMRH_0627_0703_map.html" title="Forecast Map"></iframe>
+            <p style="font-size: 0.9em; margin-top: 10px;">
+                (Interactive map — zoom & explore!)
+            </p>
+
+            <!-- Open Full Map Button -->
+            <a href="AMRH_0627_0703_map.html" target="_blank" class="download-button">
+                Open Full Map
+            </a>
+        </div>
+
+
+<button class="toggle-btn" onclick="toggleMap('rh-map')">
+  View River Herring Map
+</button>
+
+<div id="rh-map" style="display:none;">
+
+  <p class="intro-text">
+ This map highlights where river herring are distributed (blue) and areas where they are absent (brown/red).
  
+  </p>
+
+  <div class="map-container">
+    <iframe src="RH_0627_0703_map.html" title="River Herring Encounter Map"></iframe>
+    <p style="font-size: 0.9em; margin-top: 10px;">
+      (Interactive map — zoom & explore!)
+    </p>
+
+    <a href="RH_0613_0619_map.html" target="_blank" class="download-button">
+      June 27, 2026 to July 3, 2026 River Herring Map
+    </a>
+  </div>
+
+</div> 
 
 
 <button class="toggle-btn" onclick="toggleMap('am-map')">
@@ -313,19 +313,18 @@ The model uses historical presence-absence data from NMFS trawl surveys, histori
 <div id="am-map" style="display:none;">
 
   <p class="intro-text">
-    This map predicts areas where Atlantic mackerel are most likely to be encountered.
-    Blue areas indicate higher encounter probability, while red and brown areas
-    indicate lower likelihood.
+  This map highlights where Atlantic mackerel are distributed (blue) and areas where they are absent (brown/red).
+
   </p>
 
   <div class="map-container">
-    <iframe src="AM_0620_0626_map.html" title="Atlantic Mackerel Encounter Map"></iframe>
+    <iframe src="AM_0627_0703_map.html" title="Atlantic Mackerel Encounter Map"></iframe>
     <p style="font-size: 0.9em; margin-top: 10px;">
       (Interactive map — zoom & explore!)
     </p>
 
-    <a href="AM_0620_0626_map.html" target="_blank" class="download-button">
-      June 20, 2026 to June 26, 2026 Atlantic Mackerel Map
+    <a href="AM_0627_0703_map.html" target="_blank" class="download-button">
+      June 27, 2026 to July 3, 2026 Atlantic Mackerel Map
     </a>
   </div>
 
@@ -365,9 +364,18 @@ The model uses historical presence-absence data from NMFS trawl surveys, histori
 
 </div>
 
-	<a href="forecast_0620_0626.pdf" target="_blank"> Download forecast maps: 06/20 - 06/26</a><br>
+	<a href="forecast_0627_0703.pdf" target="_blank"> Download forecast maps: 06/27 - 07/03</a><br>
 
 	<a href="RHAPCAST_model_background.pdf" target="_blank"> Download background information of RHAP CAST models</a>
+
+<div class="video-container">
+    <iframe
+        src="https://www.youtube.com/embed/HRbPpgLfND8"
+        title="YouTube video"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
+</div>
 
     <footer class="footer-section">
         Brought to you by <a href="https://nye.unc.edu/" target="_blank">Nye Lab at UNC</a>
