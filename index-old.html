@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RHAPCAST - River Herring Avoidance Program Forecast</title>
+    <style>
+        /* Basic Reset and Typography */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* Header Styling */
+        .header-section {
+            background-color: #0b2d49; /* Dark Blue */
+            color: #ffffff;
+            padding: 40px 20px;
+        }
+
+        .header-section h1 {
+            margin: 0;
+            font-size: 3em;
+            letter-spacing: 2px;
+        }
+
+        .header-section p {
+            font-size: 1.2em;
+            margin-top: 5px;
+        }
+
+        /* Main Content */
+        .content-section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .intro-text {
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        /* Map Container */
+        .map-container {
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 900px;
+            height: 600px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Open Map Button */
+        .download-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #9CAF88; /* sage */
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .download-button:hover {
+            background-color: #8DA878; /* slightly darker sage */
+        }
+
+        /* Footer */
+        .footer-section {
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+	/* Tab buttons */
+  	.tab-btn {
+   	   background: #9CAF88; /* sage */
+   	   color: white;
+   	   padding: 8px 15px;
+    	   text-decoration: none;
+    	   border-radius: 8px;
+   	   font-weight: bold;
+  }
+  	.tab-btn:hover {
+    	   background: #8DA878; /* slightly darker sage */
+  }
+
+
+ 	.hidden {
+    	  display: none;
+  }
+
+  	.toggle-btn {
+  	  display: inline-block;
+   	 padding: 12px 25px;
+   	 background-color: #9CAF88;
+    	color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 15px 0;
+  }
+
+  .toggle-btn:hover {
+    background-color: #8DA878;
+}
+
+/* Small preview images above maps */
+.preview-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.preview-row img {
+    width: 50%;          /* slightly smaller than map width */
+    max-width: 420px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+    </style>
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTJ42BDL0C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LTJ42BDL0C');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    window.toggleMap = function (id) {
+      var el = document.getElementById(id);
+      if (!el) {
+        alert("Map container not found: " + id);
+        return;
+      }
+      el.style.display = el.style.display === "none" ? "block" : "none";
+    };
+  });
+</script>
+<body>
+
+<nav style="background:#eee; padding:10px; display:flex; gap:15px;">
+  <a href="index.html" class="tab-btn">Current forecasts</a>
+  <a href="pastforecasts.html" class="tab-btn">Past forecasts</a>
+</nav>
+
+    <header class="header-section">
+        <h1>RHAPCAST</h1>
+        <p>RIVER HERRING AVOIDANCE PROGRAM FORECAST</p>
+    </header>
+
+    <main class="content-section">
+        <p class="intro-text">
+
+The River Herring Avoidance Program Forecast (RHAPCAST) forecasts regions to maximize chances of encountering target species (Atlantic herring or Atlantic mackerel), while minimizing chances of encountering river herring bycatch. Forecasts are provided about one week in advance to help you plan. Look for a new forecast each Monday! 
+
+The model uses historical presence-absence data from NMFS trawl surveys, historical environmnetal data, and forecasted sea surface temperature data to predict where we expect the relevant species to be distributed.
+        </p>
+
+<div class="video-container">
+    <iframe
+        src="https://www.youtube.com/embed/HRbPpgLfND8"
+        title="YouTube video"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
+</div>
+
+        <h2> June 20, 2026 to June 26, 2026 forecast to maximize Atlantic herring encounters while minimizing river herring encounters</h2>
+
+	<main class="content-section">
+        <p class="intro-text">
+
+		<strong>The blue areas on the map show places where Atlantic herring are likely to be present and where river herring are predicted to be absent.</strong> The red and brown areas show places where river herring are predicted to be present or where Atlantic herring are predicted to be absent. <strong>We recommend going to the blue areas </strong> to maximize chances of encountering Atlantic herring and minimize risk of encountering river herring bycatch. Click on the map for more information on the exact encounter probability, and spatial coordinates can be found at the bottom left of the map. A grid cell is approximately 130 km<sup>2</sup> (height ~ 9 km and width ~ 14 km). Please refer to state and federal regulations for any restrictions.
+        </p>
+
+
+        <div class="map-container">
+
+	        <!-- Preview images -->
+    	<div class="preview-row">
+        <img src="AH_static_0620_0626.png" alt="Atlantic Herring">
+        <img src="RH_static_0620_0626.png" alt="River Herring">
+    	</div>
+
+            <!-- Interactive Map -->
+            <iframe src="AHRH_0620_0626_map.html" title="Forecast Map"></iframe>
+            <p style="font-size: 0.9em; margin-top: 10px;">
+                (Interactive map — zoom & explore!)
+            </p>
+
+            <!-- Open Full Map Button -->
+            <a href="AHRH_0620_0626_map.html" target="_blank" class="download-button">
+                Open Full Map
+            </a>
+        </div>
+
+ 	<h2>June 20, 2026 to June 26, 2026 Forecast to maximize Atlantic mackerel encounters while minimizing river herring encounters</h2>
+
+	<main class="content-section">
+        <p class="intro-text">
+		<strong>The blue areas on the map show places where Atlantic mackerel are likely to be present and where river herring are predicted to be absent.</strong> The red and brown areas show places where river herring are predicted to be present or where Atlantic mackerel are predicted to be absent. <strong> We recommend going to the blue areas </strong> to maximize chances of encountering Atlantic mackerel and minimize risk of encountering river herring bycatch. Click on the map for more information on the exact encounter probability, and spatial coordinates can be found at the bottom left of the map. A grid cell is approximately 130 km<sup>2</sup> (height ~ 9 km and width ~ 14 km). Please refer to state and federal regulations for any restrictions.
+
+        </p>
+
+        <div class="map-container">
+
+	        <!-- Preview images -->
+    	<div class="preview-row">
+        <img src="AM_static_0620_0626.png" alt="Atlantic Mackerel">
+        <img src="RH_static_0620_0626.png" alt="River Herring">
+    	</div>
+
+            <!-- Interactive Map -->
+            <iframe src="AMRH_0620_0626_map.html" title="Forecast Map"></iframe>
+            <p style="font-size: 0.9em; margin-top: 10px;">
+                (Interactive map — zoom & explore!)
+            </p>
+
+            <!-- Open Full Map Button -->
+            <a href="AMRH_0620_0626_map.html" target="_blank" class="download-button">
+                Open Full Map
+            </a>
+        </div>
+
+ 
+<h2> Individual maps for each species </h2>
+
+
+<button class="toggle-btn" onclick="toggleMap('rh-map')">
+  View River Herring Map
+</button>
+
+<div id="rh-map" style="display:none;">
+
+  <p class="intro-text">
+    This map highlights areas with a high probability of encountering river herring.
+    Blue regions indicate higher encounter likelihood, while red and brown regions
+    indicate lower likelihood. 
+  </p>
+
+  <div class="map-container">
+    <iframe src="RH_0620_0626_map.html" title="River Herring Encounter Map"></iframe>
+    <p style="font-size: 0.9em; margin-top: 10px;">
+      (Interactive map — zoom & explore!)
+    </p>
+
+    <a href="RH_0620_0626_map.html" target="_blank" class="download-button">
+      June 20, 2026 to June 26, 2026 River Herring Map
+    </a>
+  </div>
+
+</div>
+
+ 
+<button class="toggle-btn" onclick="toggleMap('ah-map')">
+  View Atlantic Herring Map
+</button>
+
+<div id="ah-map" style="display:none;">
+
+  <p class="intro-text">
+    This map shows predicted encounter probabilities for Atlantic herring.
+    Blue areas represent higher likelihood of encountering Atlantic herring,
+    while red and brown areas indicate lower likelihood.
+  </p>
+
+  <div class="map-container">
+    <iframe src="AH_0620_0626_map.html" title="Atlantic Herring Encounter Map"></iframe>
+    <p style="font-size: 0.9em; margin-top: 10px;">
+      (Interactive map — zoom & explore!)
+    </p>
+
+    <a href="AH_0620_0626_map.html" target="_blank" class="download-button">
+      June 20, 2026 to June 26, 2026 Atlantic Herring Map
+    </a>
+  </div>
+
+</div>
+
+ 
+
+
+<button class="toggle-btn" onclick="toggleMap('am-map')">
+  View Atlantic Mackerel Map
+</button>
+
+<div id="am-map" style="display:none;">
+
+  <p class="intro-text">
+    This map predicts areas where Atlantic mackerel are most likely to be encountered.
+    Blue areas indicate higher encounter probability, while red and brown areas
+    indicate lower likelihood.
+  </p>
+
+  <div class="map-container">
+    <iframe src="AM_0620_0626_map.html" title="Atlantic Mackerel Encounter Map"></iframe>
+    <p style="font-size: 0.9em; margin-top: 10px;">
+      (Interactive map — zoom & explore!)
+    </p>
+
+    <a href="AM_0620_0626_map.html" target="_blank" class="download-button">
+      June 20, 2026 to June 26, 2026 Atlantic Mackerel Map
+    </a>
+  </div>
+
+</div>
+
+    </main>
+
+<div class="content-section">
+  <h2>Feedback / Questions</h2>
+
+  <!-- Question 1 -->
+  <form action="https://formspree.io/f/mgvgrnao" method = "POST">
+    <label for="q1">1. Do these forecasts look accurate?</label><br>
+    <textarea id="q1" name="q1" rows="3" cols="50" placeholder="Your answer (optional)"></textarea><br>
+    <button type="submit" class="tab-btn">Submit</button>
+  </form>
+
+
+  <hr>
+
+  <!-- Question 2 -->
+  <form action="https://formspree.io/f/mnnelgpo" method = POST>
+    <label for="q2">2. Were these maps useful in planning on where to fish/ Did they work?</label><br>
+    <textarea id="q2" name="q2" rows="3" cols="50" placeholder="Your answer (optional)"></textarea><br>
+    <button type="submit" class="tab-btn">Submit</button>
+  </form>
+
+
+  <hr>
+
+  <!-- Question 3 -->
+  <form action="https://formspree.io/f/xqarwypo" method = POST>
+    <label for="q3">3. Any suggestions for improvement?</label><br>
+    <textarea id="q3" name="q3" rows="3" cols="50" placeholder="Your answer (optional)"></textarea><br>
+    <button type="submit" class="tab-btn">Submit</button>
+  </form>
+
+</div>
+
+	<a href="forecast_0620_0626.pdf" target="_blank"> Download forecast maps: 06/20 - 06/26</a><br>
+
+	<a href="RHAPCAST_model_background.pdf" target="_blank"> Download background information of RHAP CAST models</a>
+
+    <footer class="footer-section">
+        Brought to you by <a href="https://nye.unc.edu/" target="_blank">Nye Lab at UNC</a>
+    </footer>
+
+</body>
+</html>
