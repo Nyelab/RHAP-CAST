@@ -138,6 +138,80 @@
     border: 1px solid #ccc;
 }
 
+.map-wrapper {
+    position: relative;
+}
+
+.expand-map {
+    position: absolute;
+    top: 10px;
+    right: 110px;
+    background: white;
+    color: black;
+    padding: 8px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 18px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.expand-map:hover {
+    background: #f2f2f2;
+}
+
+.species-info {
+    border-top: 2px solid #ccc;   /* Horizontal line */
+    margin-top: 30px;             /* Space above the line */
+    padding-top: 20px;            /* Space between line and text */
+}
+
+.intro-heading {
+    display: block;               /* Put on its own line */
+    text-align: center;           /* Center it */
+    font-size: inherit;           /* Keep same size as the paragraph */
+    margin-bottom: 10px;          /* Space before the rest of the text */
+}
+
+.species-info {
+    border-top: 3px solid #003366;
+    margin-top: 30px;
+    padding-top: 20px;
+}
+
+.AHRH-section {
+    background: #eef6ff;      /* very light blue */
+    border: 1px solid #c7ddf5;
+    border-radius: 12px;
+    padding: 30px;
+    margin: 30px auto;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.AMRH-section {
+    background: #eef8f0;      /* very light green */
+    border: 1px solid #cde7d1;
+    border-radius: 12px;
+    padding: 30px;
+    margin: 30px auto;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.AHRH-section h2{
+    background:#003366;
+    color:white;
+    margin:-30px -30px 25px -30px;
+    padding:18px;
+    border-radius:12px 12px 0 0;
+    text-align:center;
+}
+.AMRH-section h2{
+    background:#003366;
+    color:white;
+    margin:-30px -30px 25px -30px;
+    padding:18px;
+    border-radius:12px 12px 0 0;
+    text-align:center;
+}
     </style>
 </head>
 
@@ -187,17 +261,19 @@ The model uses historical presence-absence data from NMFS trawl surveys, histori
             		 alt="Map"
              		style="width:1200px; max-width:100%; height:auto;">
     	</div>
-</div>	</a>
+
+
+<div class = "AHRH-section">	</a>
 
         <h2> July 11, 2026 to July 17, 2026 forecast to catch Atlantic herring and avoid river herring </h2>
 
-	<main class="content-section">
+	<div class="content-section">
         <p class="intro-text">
 
-		<strong>The blue areas on the map show places where Atlantic herring are likely to be present and where river herring are predicted to be absent.</strong> The red and brown areas show places where river herring are predicted to be present or where Atlantic herring are predicted to be absent. <strong> We recommend going to the blue areas. </strong> Click on the map for more information on the exact encounter probability, and spatial coordinates can be found at the bottom left of the map. A grid cell is approximately 130 km<sup>2</sup> (height ~ 9 km and width ~ 14 km). Please refer to state and federal regulations for any restrictions.
+		<strong>The blue areas on the map (Avoid river herring and catch Atlantic herring map) show places where Atlantic herring are likely to be present and where river herring are likely to be absent.</strong> The red and brown areas show places where river herring are likely to be present or where Atlantic herring are likely to be absent. <strong> We recommend going to the blue areas. </strong> Click on the map for more information on the exact encounter probability, and spatial coordinates can be found at the bottom left of the map. A grid cell is approximately 130 km<sup>2</sup> (height ~ 9 km and width ~ 14 km). Please refer to state and federal regulations for any restrictions.
         </p>
 
-    	</div>
+    	<div class="map-wrapper">
 
             <!-- Interactive Map -->
             <iframe src="AHRH_0711_0717_map.html" title="Forecast Map"></iframe>
@@ -205,11 +281,17 @@ The model uses historical presence-absence data from NMFS trawl surveys, histori
                 (Interactive map — zoom & explore!)
             </p>
 
-            <!-- Open Full Map Button -->
-            <a href="AHRH_0711_0717_map.html" target="_blank" class="download-button">
-                Open Full Map
+            <a href="AHRH_0711_0717_map.html" target="_blank" class="expand-map">
+               ⛶
             </a>
         </div>
+
+<div class="species-info">
+    <p class="intro-text">
+        <strong class="intro-heading">Individual maps of each species.</strong>
+        Blue areas show places where the species are present and red/brown areas show where the species are absent. Click on tabs for maps! Please refer to state and federal regulations for any restrictions.
+    </p>
+</div>
 
 <button class="toggle-btn" onclick="toggleMap('rh-map')">
   View River Herring Map
@@ -255,18 +337,21 @@ The model uses historical presence-absence data from NMFS trawl surveys, histori
       July 11, 2026 to July 17, 2026 Atlantic Herring Map
     </a>
   </div>
-
 </div>
+</div>
+</div>
+
+<div class = "AMRH-section">
 
  	<h2>July 11, 2026 to July 17, 2026 Forecast to catch Atlantic mackerel and avoid river herring </h2>
 
-	<main class="content-section">
+	<div class="content-section">
         <p class="intro-text">
-		<strong>The blue areas on the map show places where Atlantic mackerel are likely to be present and where river herring are predicted to be absent.</strong> The red and brown areas show places where river herring are predicted to be present or where Atlantic mackerel are predicted to be absent. <strong> We recommend going to the blue areas. </strong> Click on the map for more information on the exact encounter probability, and spatial coordinates can be found at the bottom left of the map. A grid cell is approximately 130 km<sup>2</sup> (height ~ 9 km and width ~ 14 km). Please refer to state and federal regulations for any restrictions.
+		<strong>The blue areas on the map (Avoid river herring and catch Atlantic mackerel map) show places where Atlantic mackerel are likely to be present and where river herring are likely to be absent.</strong> The red and brown areas show places where river herring are likely to be present or where Atlantic mackerel are likely to be absent. <strong> We recommend going to the blue areas. </strong> Click on the map for more information on the exact encounter probability, and spatial coordinates can be found at the bottom left of the map. A grid cell is approximately 130 km<sup>2</sup> (height ~ 9 km and width ~ 14 km). Please refer to state and federal regulations for any restrictions.
         </p>
 
 
-    	</div>
+    	<div class="map-wrapper">
 
             <!-- Interactive Map -->
             <iframe src="AMRH_0711_0717_map.html" title="Forecast Map"></iframe>
@@ -274,11 +359,18 @@ The model uses historical presence-absence data from NMFS trawl surveys, histori
                 (Interactive map — zoom & explore!)
             </p>
 
-            <!-- Open Full Map Button -->
-            <a href="AMRH_0711_0717_map.html" target="_blank" class="download-button">
-                Open Full Map
+            <a href="AMRH_0711_0717_map.html" target="_blank" class="expand-map">
+           	 ⛶
             </a>
         </div>
+
+
+<div class="species-info">
+    <p class="intro-text">
+        <strong class="intro-heading">Individual maps of each species.</strong>
+        Blue areas show places where the species are present and red/brown areas show where the species are absent. Click on tabs for maps! Please refer to state and federal regulations for any restrictions.
+    </p>
+</div>
 
 
 <button class="toggle-btn" onclick="toggleMap('rh-map2')">
@@ -329,7 +421,9 @@ The model uses historical presence-absence data from NMFS trawl surveys, histori
 
 </div>
 
-    </main>
+    </div>
+</div>
+</div>
 
 <div class="content-section">
   <h2>Feedback / Questions</h2>
