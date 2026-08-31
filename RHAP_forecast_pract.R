@@ -78739,7 +78739,7 @@ poly_AM_RH$joint_likelihood <- poly_AM_RH$mean_val.x * (1 - poly_AM_RH$mean_val.
 
 plot(poly_AM_RH, "joint_likelihood")
 
-AMRH_poly_0829 <- st_as_sf(poly_AM_RH)
+AMRH_poly_0905 <- st_as_sf(poly_AM_RH)
 
 AMRH1 <- ggplot(AMRH_poly_0905) +
   geom_sf(aes(fill = joint_likelihood)) +
